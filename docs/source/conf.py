@@ -29,7 +29,7 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx-rtd-dark-mode'
+html_theme = 'groundwork'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
