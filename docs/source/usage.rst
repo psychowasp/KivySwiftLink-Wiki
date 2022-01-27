@@ -19,9 +19,10 @@ it will ask you if you want to copy the file as **ksl** to **/usr/local/bin/**
 
 so from now on you just have to run KivySwiftLink like this:
 
-```sh
-ksl <commands>
-```
+.. code-block:: shell
+
+   ksl <commands>
+
 
 
 Creating recipes
