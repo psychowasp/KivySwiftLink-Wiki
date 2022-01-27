@@ -47,11 +47,13 @@ in terminal
 `cd` to the new empty folder
 
 .. code-block:: shell
+
    cd path-of-the-folder
 
 and run:
 
 .. code-block:: shell
+
    ksl setup
 
 
