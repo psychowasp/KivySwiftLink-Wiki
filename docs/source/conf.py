@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'KivySwiftLink'
+copyright = '2021, PsycHoWasP'
+author = 'PsycHoWasP'
 
 release = '0.1'
 version = '0.1.0'
