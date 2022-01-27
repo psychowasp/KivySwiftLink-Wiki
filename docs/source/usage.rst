@@ -14,6 +14,16 @@ Open a terminal and goto the folder you downloaded KivySwiftLink to.
    chmod +x KivySwiftLink
    ./KivySwiftLink install
 
+
+it will ask you if you want to copy the file as **ksl** to **/usr/local/bin/**
+
+so from now on you just have to run KivySwiftLink like this:
+
+```sh
+ksl <commands>
+```
+
+
 Creating recipes
 ----------------
 
