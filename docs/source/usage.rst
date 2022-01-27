@@ -6,11 +6,12 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+Download a release.
+Open a terminal and goto the folder you downloaded KivySwiftLink to.
 
 .. code-block:: console
-
-   (.venv) $ pip install lumache
+   chmod +x KivySwiftLink
+   ./KivySwiftLink install
 
 Creating recipes
 ----------------
