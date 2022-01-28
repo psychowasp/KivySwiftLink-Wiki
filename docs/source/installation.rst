@@ -34,6 +34,8 @@ Like normal kivy-ios make sure to do the **Prerequisites** part of the
 standard kivy-ios
 [tutorial](https://kivy.org/doc/stable/guide/packaging-ios.html)
 
+Setup a working folder
+============
 ## -- Setup a working folder --
 
 create a Empty folder that will be the new "Working Folder" same way as
