@@ -71,3 +71,8 @@ and it will do the following for you
 
 
 [Discord Server](https://discord.gg/yD3dXqBtdK)
+
+
+
+
+.. autodecorator:: call_class
