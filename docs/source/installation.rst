@@ -11,6 +11,11 @@ Installation
 Download a release. Open a terminal and goto the folder you downloaded
 KivySwiftLink to.
 
+
+
+
+
+
 .. code:: console
 
    chmod +x KivySwiftLink
