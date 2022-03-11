@@ -19,5 +19,5 @@ Contents
    usage
    api
 
-.. automodule:: camera_api
+.. automodule:: swift_types
    :members:
