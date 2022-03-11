@@ -41,17 +41,38 @@
 #     "ObjectStrEnum",
 #     "ObjectIntEnum"
 #     ]
-
-class int32():
+class int:
     """
-    C Int32
     """
 
-class uint32():
+class uint:
     """
-    C Int32
     """
 
+class int32:
+    """
+    """
+
+class uint32:
+    """
+    """
+    
+class int16:
+    """
+    """
+
+class uint16:
+    """
+    """
+    
+class int8:
+    """
+    """
+
+class uint8:
+    """
+    """
+    
 long = object
 ulong = object
 longlong = object
