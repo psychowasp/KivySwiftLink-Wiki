@@ -1,11 +1,5 @@
-from ctypes import c_double, c_float, c_int, c_int16, c_long, c_longdouble, c_longlong, c_short, c_uint16, c_ulong, c_ulonglong
-from ctypes import c_uint8, c_uint32
-from ctypes import c_uint8
-from ctypes import c_int8 
-from ctypes import c_uint
-from ctypes import c_long
+
 from typing import List,Tuple,TypeVar
-from cython import struct
 from enum import Enum
 from collections.abc import Sequence as sequence
 #from ctypes import c_int8 as
@@ -48,24 +42,24 @@ __all__ = [
     "ObjectIntEnum"
     ]
 
-int32 = c_int
-uint32 = c_uint32
-long = c_long
-ulong = c_ulong
-longlong = c_longlong
-ulonglong = c_ulonglong
-uint8 = c_uint8
-short = c_int16
-int16 = c_int16
-ushort = c_uint16
-uint16 = c_uint16
-data = c_uint8
-json = c_int8
-jsondata = c_uint8
-uint = c_uint
-double = c_double
-float32 = c_float
-longdouble = c_longdouble
+int32 = object
+uint32 = object
+long = object
+ulong = object
+longlong = object
+ulonglong = object
+uint8 = object
+short = object
+int16 = object
+ushort = object
+uint16 = object
+data = object
+json = object
+jsondata = object
+uint = object
+double = object
+float32 = object
+longdouble = object
 
 
 def EventDispatcher(_: list[str]): ...
