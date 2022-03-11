@@ -1,8 +1,6 @@
 Documentation
 =================
 
-The ``SimpleBleClient`` class
-*****************************
 .. autoclass:: simpleble.SimpleBleClient
     :members:
     :undoc-members:
