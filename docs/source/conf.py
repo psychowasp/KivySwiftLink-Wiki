@@ -1,15 +1,8 @@
 # Configuration file for the Sphinx documentation builder.
-
-# -- Project information
-import mock
+import os
 import sys
-MOCK_MODULES = [
-    "module"
-]
-
-for mod_name in MOCK_MODULES: 
-    sys.modules[mod_name] = mock.Mock()
-
+sys.path.insert(0, os.path.abspath('../../module/'))
+# -- Project information
 project = 'KivySwiftLink'
 copyright = '2021, PsycHoWasP'
 author = 'PsycHoWasP'
