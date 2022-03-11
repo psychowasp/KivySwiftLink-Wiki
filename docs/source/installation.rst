@@ -3,6 +3,11 @@ Installation =====
 Installation
 ============
 
+
+
+
+
+
 Download a release. Open a terminal and goto the folder you downloaded
 KivySwiftLink to.
 
