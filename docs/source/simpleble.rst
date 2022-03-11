@@ -7,6 +7,3 @@ Documentation
     :undoc-members:
 
 
-.. automodule:: swift_types
-    :members:
-
