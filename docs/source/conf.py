@@ -2,7 +2,7 @@
 
 # -- Project information
 import sys
-sys.path.insert(0, '/Users/musicmaker/Documents/GitHub/KivySwiftLink-Wiki/module')
+sys.path.insert(0, '../module')
 
 
 
