@@ -6,7 +6,7 @@ Documentation
     :undoc-members:
     :show-inheritance:
 
-.. automodule:: simpleble
+.. automodule:: swift_types
     :members:
     :undoc-members:
 
