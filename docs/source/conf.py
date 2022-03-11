@@ -14,7 +14,9 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../simpleble/'))
+path = os.path.abspath('../../simpleble/')
+sys.path.insert(0, path)
+print(path)
 
 
 # -- Project information -----------------------------------------------------
