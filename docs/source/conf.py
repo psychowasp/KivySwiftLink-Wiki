@@ -1,12 +1,14 @@
 # Configuration file for the Sphinx documentation builder.
 import os
 import sys
+from os.path import dirname,join
 path = os.path.abspath('../../module/')
 #sys.path.insert(0, os.path.abspath('../../module/'))
 sys.path.insert(0, os.path.abspath('sphinxext'))
-base_dir = os.path.dirname(os.path.abspath(__file__))
-print(path)
-sys.path.insert(0, os.path.dirname(base_dir))
+base_dir = dirname(os.path.abspath(__file__))
+module_path = join(dirname(dirname(base_dir)),"module")
+print(module_path)
+sys.path.insert(0, module_path)
 # -- Project information
 project = 'KivySwiftLink'
 copyright = '2021, PsycHoWasP'
