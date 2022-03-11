@@ -42,8 +42,16 @@
 #     "ObjectIntEnum"
 #     ]
 
-int32 = object
-uint32 = object
+class int32():
+    """
+    C Int32
+    """
+
+class uint32():
+    """
+    C Int32
+    """
+
 long = object
 ulong = object
 longlong = object
