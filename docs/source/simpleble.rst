@@ -8,27 +8,8 @@ The ``SimpleBleClient`` class
     :undoc-members:
     :show-inheritance:
 
-
-The ``SimpleBleDevice`` class
-*****************************
-.. autoclass:: simpleble.SimpleBleDevice
+.. automodule:: simpleble
     :members:
     :undoc-members:
-    :show-inheritance:
 
 
-The ``SimpleBleScanDelegate`` class
-***********************************
-.. autoclass:: simpleble.SimpleBleScanDelegate
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-The ``SimpleBleNotificationDelegate`` class
-*******************************************
-.. autoclass:: simpleble.SimpleBleNotificationDelegate
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-    
