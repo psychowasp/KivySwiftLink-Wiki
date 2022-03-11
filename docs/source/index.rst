@@ -19,5 +19,3 @@ Contents
    usage
    api
 
-.. automodule:: swift_types
-   :members:
