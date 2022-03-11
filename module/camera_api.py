@@ -1,0 +1,1 @@
+/Volumes/WorkSSD/autopythontest/venv/lib/python3.9/site-packages/camera_api.pyi

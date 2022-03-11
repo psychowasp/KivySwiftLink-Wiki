@@ -1,6 +1,10 @@
 # Configuration file for the Sphinx documentation builder.
 
 # -- Project information
+import sys
+sys.path.insert(0, '/Users/musicmaker/Documents/GitHub/KivySwiftLink-Wiki/module')
+
+
 
 project = 'KivySwiftLink'
 copyright = '2021, PsycHoWasP'
@@ -13,9 +17,9 @@ version = '0.1.0'
 
 extensions = [
     'sphinx.ext.duration',
-    'sphinx.ext.doctest',
+    #'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
+    #'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
 ]
 

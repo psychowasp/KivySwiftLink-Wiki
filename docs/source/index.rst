@@ -4,7 +4,7 @@ Welcome to KivySwiftLink's documentation!
 **KivySwiftLink**
 
 Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+how to :ref:`installation` the project. fgf
 
 .. note::
 
@@ -18,3 +18,6 @@ Contents
    installation
    usage
    api
+
+.. automodule:: camera_api
+   :members:
