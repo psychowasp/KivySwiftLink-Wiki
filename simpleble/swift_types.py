@@ -41,75 +41,75 @@
 #     "ObjectStrEnum",
 #     "ObjectIntEnum"
 #     ]
-class int:
+class int():
     """
     """
 
-class uint:
+class uint():
     """
     """
 
-class int32:
+class int32():
     """
     """
 
-class uint32:
-    """
-    """
-    
-class int16:
-    """
-    """
-
-class uint16:
+class uint32():
     """
     """
     
-class int8:
+class int16():
     """
     """
 
-class uint8:
+class uint16():
     """
     """
     
-long = object
-ulong = object
-longlong = object
-ulonglong = object
-uint8 = object
-short = object
-int16 = object
-ushort = object
-uint16 = object
-data = object
-json = object
-jsondata = object
-uint = object
-double = object
-float32 = object
-longdouble = object
+class int8():
+    """
+    """
+
+class uint8():
+    """
+    """
+    
+# long = object
+# ulong = object
+# longlong = object
+# ulonglong = object
+# uint8 = object
+# short = object
+# int16 = object
+# ushort = object
+# uint16 = object
+# data = object
+# json = object
+# jsondata = object
+# uint = object
+# double = object
+# float32 = object
+# longdouble = object
 
 
-# def EventDispatcher(_: list[str]): ...
+# def EventDispatcher(_(): list[str])(): ...
 
-# def callback(direct: bool): ...
+# def callback(direct(): bool)(): ...
 
-# def call_class(class_name: str): ...
+# def call_class(class_name(): str)(): ...
 
-# def call_target(class_name: str): ...
+# def call_target(class_name(): str)(): ...
 
-# def swift_func(): ...
+# def swift_func()(): ...
 
-# def _direct(): ...
+# def _direct()(): ...
 
-# #def codable(): ...
+# #def codable()(): ...
 
-# class Codable: ...
+# class Codable(): ...
 
-# #def wrapper(dispatch_events: bool = False, events: list[str] = [], singleton: bool = True): ...
+# #def wrapper(dispatch_events(): bool = False, events(): list[str] = [], singleton(): bool = True)(): ...
 
-# class wrapper:
+# class wrapper():
     
 #     def __init__(self, *args, **kwargs): ...
     
