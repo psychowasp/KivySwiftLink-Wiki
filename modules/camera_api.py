@@ -3,7 +3,7 @@ from swift_types import *
 from enum import Enum
 ObjectStrEnum = Enum
 
-class CameraConfigMode(Enum):
+class CameraConfigMode:
     QRcode = 0
     PhotoRaw = 1
     PhotoPng = 2
