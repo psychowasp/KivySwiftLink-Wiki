@@ -20,9 +20,9 @@ class CameraConfigMode:
     CoreML = 7
 
 
-class KivyTextureKeys(ObjectStrEnum):
-    cfmt = 'colorfmt'
-    bfmt = 'bufferfmt'
+# class KivyTextureKeys(ObjectStrEnum):
+#     cfmt = 'colorfmt'
+#     bfmt = 'bufferfmt'
 
 
 class CameraApi:
