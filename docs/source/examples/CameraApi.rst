@@ -633,6 +633,7 @@ Enums:
 """"""
 .. autoclass:: camera_api.CameraConfigMode
     :members:
+    :undoc-members:
 
 WrapperClass:
 """""""""""""
