@@ -5,7 +5,8 @@ class HalloWorld:
     """_summary_
     """
     class Callbacks:
-        
+        """
+        """
         def fake_func(self):
             """
             """

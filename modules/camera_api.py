@@ -22,7 +22,39 @@ class CameraApi:
     """
     A Wrapper For AVCapture Foundation
     """
+    class Callbacks:
+            """
+            """
+            
+            def set_preview_size(self, width: int, height: int):
+                """
+                """
 
+            def update_view_size(self, width: float, height: float):
+                """
+                """
+                
+            def get_presets(self):
+                """
+                """
+            
+            def returned_image_data(self, data: object, width: int, height: int):
+                """
+                """
+            
+            def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
+                """
+                """
+            
+            def blit_buffer(self, data: object):
+                """
+                """
+
+            
+            def set_camera_texture(self, width: int, height: int):
+                """
+                """
+    
     def start_capture(self, mode: int, callback_cls: object):
         """
         """
@@ -71,38 +103,7 @@ class CameraApi:
         """
         """
         
-        class Callbacks:
-            """
-            """
-            
-            def set_preview_size(self, width: int, height: int):
-                """
-                """
-
-            def update_view_size(self, width: float, height: float):
-                """
-                """
-                
-            def get_presets(self):
-                """
-                """
-            
-            def returned_image_data(self, data: object, width: int, height: int):
-                """
-                """
-            
-            def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
-                """
-                """
-            
-            def blit_buffer(self, data: object):
-                """
-                """
-
-            
-            def set_camera_texture(self, width: int, height: int):
-                """
-                """
+        
 
 
 from kivy.uix.floatlayout import FloatLayout
