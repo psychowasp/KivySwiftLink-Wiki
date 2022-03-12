@@ -7,6 +7,6 @@ Types:
 
 ``SignedIntegers``
 ^^^^^^^^^^^^^^^^^^
-.. autoclass:: swift_types.SignedIntegers
+.. automodule:: swift_types
     :members:
     :undoc-members:

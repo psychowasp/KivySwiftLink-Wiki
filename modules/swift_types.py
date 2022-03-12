@@ -47,7 +47,7 @@ from builtins import *
 class SignedIntegers:
 
     class int(int):
-        """\
+        """
         +--------+-----+-------+
         | python | <-> | swift |
         +========+=====+=======+
