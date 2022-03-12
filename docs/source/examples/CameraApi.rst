@@ -637,6 +637,5 @@ Enums:
 .. autoclass:: camera_api.CameraConfigMode
     :members:
         
-        
 .. autoclass:: camera_api.CameraApi
     :members:

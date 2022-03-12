@@ -37,88 +37,88 @@ class TestClass(object):
 #     bfmt = 'bufferfmt'
 
 
-# class CameraApi:
-#     """
-#     A Wrapper For AVCapture Foundation
-#     """
-#     class Callbacks:
-#             def set_preview_size(self, width: int, height: int):
-#                 """
-#                 """
+class CameraApi:
+    """
+    A Wrapper For AVCapture Foundation
+    """
+    class Callbacks:
+            def set_preview_size(self, width: int, height: int):
+                """
+                """
 
-#             def update_view_size(self, width: float, height: float):
-#                 """
-#                 """
+            def update_view_size(self, width: float, height: float):
+                """
+                """
                 
-#             def get_presets(self):
-#                 """
-#                 """
+            def get_presets(self):
+                """
+                """
             
-#             def returned_image_data(self, data: object, width: int, height: int):
-#                 """
-#                 """
+            def returned_image_data(self, data: object, width: int, height: int):
+                """
+                """
             
-#             def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
-#                 """
-#                 """
+            def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
+                """
+                """
             
-#             def blit_buffer(self, data: object):
-#                 """
-#                 """
+            def blit_buffer(self, data: object):
+                """
+                """
 
             
-#             def set_camera_texture(self, width: int, height: int):
-#                 """
-#                 """
-#     def __init__(self,callback_class: Callbacks):...
+            def set_camera_texture(self, width: int, height: int):
+                """
+                """
+    def __init__(self,callback_class: Callbacks):...
     
-#     def start_capture(self, mode: CameraConfigMode, callback_cls: object):
-#         """
-#         """
+    def start_capture(self, mode: CameraConfigMode, callback_cls: object):
+        """
+        """
 
-#     def stop_capture(self, mode: int):
-#         """
-#         """
+    def stop_capture(self, mode: int):
+        """
+        """
 
-#     def set_camera_mode(self, mode: int):
-#         """
-#         """
+    def set_camera_mode(self, mode: int):
+        """
+        """
 
-#     def select_camera(self, index: int):
-#         """
-#         """
+    def select_camera(self, index: int):
+        """
+        """
 
-#     def take_photo(self):
-#         """
-#         """
+    def take_photo(self):
+        """
+        """
 
-#     def take_multi_photo(self, count: int):
-#         """
-#         """
+    def take_multi_photo(self, count: int):
+        """
+        """
 
-#     def select_preview_preset(self, preset: str):
-#         """
-#         """
+    def select_preview_preset(self, preset: str):
+        """
+        """
 
-#     def set_focus_point(self, x: float, y: float):
-#         """
-#         """
+    def set_focus_point(self, x: float, y: float):
+        """
+        """
 
-#     def zoom_camera(self, zoom: float):
-#         """
-#         """
+    def zoom_camera(self, zoom: float):
+        """
+        """
 
-#     def set_exposure(self, value: float):
-#         """
-#         """
+    def set_exposure(self, value: float):
+        """
+        """
 
-#     def auto_exposure(self, state: bool):
-#         """
-#         """
+    def auto_exposure(self, state: bool):
+        """
+        """
         
-#     def update_view_pos(self, x: float, y: float):
-#         """
-#         """
+    def update_view_pos(self, x: float, y: float):
+        """
+        """
         
         
 
