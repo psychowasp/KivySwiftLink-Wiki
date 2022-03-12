@@ -634,18 +634,6 @@ Enums:
 .. autoclass:: camera_api.TestClass
     :members:
 
-WrapperClass:
-"""""""""""""
-.. autoclass:: camera_api.CameraApi
-    :members:
-
-.. autoclass:: camera_api.CameraApi.Callbacks
-    :members:
-
-Addon Classes:
-""""""""""""""
-.. autoclass:: camera_api.CameraView
-    :members:
 
         
         
