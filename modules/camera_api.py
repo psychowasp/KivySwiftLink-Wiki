@@ -3,15 +3,15 @@ from swift_types import *
 from enum import Enum
 ObjectStrEnum = Enum
 
-class CameraConfigMode:
-    """
+class CameraConfigMode(Enum):
+    
     QRcode = 0
     PhotoRaw = 1
     PhotoPng = 2
     Video = 3
     Vision = 4
     CoreML = 7
-    """
+    
 
     
     def test(self):

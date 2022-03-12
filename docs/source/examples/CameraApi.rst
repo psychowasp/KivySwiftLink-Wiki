@@ -631,11 +631,13 @@ Api:
 
 Enums:
 """"""
-.. autoclass:: camera_api.TestClass
-    :members:
 
 .. autoclass:: camera_api.CameraConfigMode
     :members:
+    :undoc-members:
         
 .. autoclass:: camera_api.CameraApi
+    :members:
+
+.. autoclass:: camera_api.CameraApi.Callbacks
     :members:
