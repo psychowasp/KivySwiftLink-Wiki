@@ -213,11 +213,12 @@ class FunctionDecorators:
         """
         
         
-callback = FunctionDecorators.callback()
-wrapper = ClassDecorators.wrapper()
-python = ClassDecorators.python()
+# callback = FunctionDecorators.callback()
+# wrapper = ClassDecorators.wrapper()
+# python = ClassDecorators.python()
 
-test_int = SignedIntegers.int
+
+
 # long = object
 # ulong = object
 # longlong = object
