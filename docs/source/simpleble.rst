@@ -11,7 +11,6 @@ Documentation
 .. autoclass:: swift_types.UnsignedIntegers
     :members:
 
-
 ``Strings``
 ***********
 .. autoclass:: swift_types.str
