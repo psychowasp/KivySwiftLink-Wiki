@@ -1,7 +1,6 @@
 from symtable import Class
 from swift_types import *
 from enum import Enum
-from swift_types import FunctionDecorators
 ObjectStrEnum = Enum
 
 class CameraConfigMode(Enum):
@@ -51,6 +50,7 @@ class CameraApi:
             def set_camera_texture(self, width: int, height: int):
                 """
                 """
+    def __init__(self,callback_class: Callbacks):...
     
     def start_capture(self, mode: CameraConfigMode, callback_cls: object):
         """
