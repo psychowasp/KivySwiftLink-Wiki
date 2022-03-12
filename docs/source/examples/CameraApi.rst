@@ -638,6 +638,6 @@ Api:
 
 .. autoclass:: camera_api.CameraView
     :members:
-    :undoc-members:
+
         
         
