@@ -23,9 +23,6 @@ class CameraApi:
     A Wrapper For AVCapture Foundation
     """
     class Callbacks:
-            """
-            """
-            
             def set_preview_size(self, width: int, height: int):
                 """
                 """

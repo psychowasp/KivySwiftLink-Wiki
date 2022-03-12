@@ -636,6 +636,9 @@ Api:
 .. autoclass:: camera_api.CameraApi
     :members:
 
+.. autoclass:: camera_api.CameraApi.Callbacks
+    :members:
+
 .. autoclass:: camera_api.CameraView
     :members:
 
