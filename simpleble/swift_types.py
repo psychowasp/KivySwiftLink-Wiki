@@ -44,7 +44,7 @@
 
 class SignedIntegers:
 
-    class int():
+    class int(int):
         """\
         +-------------+-----+-------------+
         |    python   | <-> |    swift    |
@@ -53,7 +53,7 @@ class SignedIntegers:
         +-------------+-----+-------------+
         """
 
-    class int32():
+    class int32(int):
         """
         +--------+-----+-------+
         | python | <-> | swift |
@@ -63,7 +63,7 @@ class SignedIntegers:
         """
 
         
-    class int16():
+    class int16(int):
         """
         +--------+-----+---------------+
         | python | <-> | swift         |
@@ -165,7 +165,7 @@ class Sequences:
         
     class data():
         """
-        py: memoryview[uint8] <-> swift: Data
+        py: memoryview[:attr:`uint8`] <-> swift: Data
         """
     
 # long = object
