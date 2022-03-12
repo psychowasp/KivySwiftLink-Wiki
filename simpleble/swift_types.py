@@ -167,7 +167,35 @@ class Sequences:
         """
         py: memoryview[:attr:`uint8`] <-> swift: Data
         """
-    
+
+
+class ClassDecorators:
+    """
+
+    """
+    class wrapper:
+        """
+
+        """
+        def __init__(self, singleton=True, event_dispatch=False, events = []): ...
+    class python:
+        """
+
+        """
+
+class FunctionDecorators:
+    """
+
+    """
+    class callback:
+        """
+
+        """
+        def __init__(self, optional=False, direct=False):...
+    class swift_function:
+        """
+
+        """
 # long = object
 # ulong = object
 # longlong = object

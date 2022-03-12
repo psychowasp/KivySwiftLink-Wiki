@@ -13,7 +13,6 @@ Welcome to ``simpleble``'s documentation!
    intro
    simpleble
    examples
-   modules
 
 .. code-block:: swift
    :linenos:

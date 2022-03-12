@@ -1,24 +1,39 @@
+=================
 Documentation
 =================
 
+Types:
+------
+
 ``SignedIntegers``
-******************
+^^^^^^^^^^^^^^^^^^
 .. autoclass:: swift_types.SignedIntegers
     :members:
 
 ``UnsignedIntegers``
-********************
+^^^^^^^^^^^^^^^^^^^^
 .. autoclass:: swift_types.UnsignedIntegers
     :members:
 
-
 ``Strings``
-***********
+^^^^^^^^^^^^^^^^^^
 .. autoclass:: swift_types.str
     :members:
 
 ``Sequences``
-*************
+^^^^^^^^^^^^^^^^^^
 .. autoclass:: swift_types.Sequences
     :members:
 
+Decorators:
+-----------------
+
+Class Decorators
+^^^^^^^^^^^^^^^^
+.. autoclass:: swift_types.ClassDecorators
+    :members:
+
+Function Decorators
+^^^^^^^^^^^^^^^^^^^
+.. autoclass:: swift_types.FunctionDecorators
+    :members:
