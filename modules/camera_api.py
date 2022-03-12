@@ -12,12 +12,7 @@ class CameraConfigMode:
     Vision = 4
     CoreML = 7
     """
-    QRcode = 0
-    PhotoRaw = 1
-    PhotoPng = 2
-    Video = 3
-    Vision = 4
-    CoreML = 7
+
     
     def test(self):
         """
