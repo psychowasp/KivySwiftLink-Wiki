@@ -1,7 +1,7 @@
 from symtable import Class
 from swift_types import *
 from enum import Enum
-
+from swift_types import FunctionDecorators
 ObjectStrEnum = Enum
 
 class CameraConfigMode(Enum):
@@ -66,43 +66,43 @@ class CameraApi:
     def auto_exposure(self, state: bool):
         """
         """
-    @callback
-    def set_preview_size(self, width: int, height: int):
-        """
-        """
-
+        
     def update_view_pos(self, x: float, y: float):
         """
         """
-
-    @callback
-    def update_view_size(self, width: float, height: float):
-        """
-        """
         
-    @callback
-    def get_presets(self):
-        """
-        """
+        class Callbacks:
+            """
+            """
+            
+            def set_preview_size(self, width: int, height: int):
+                """
+                """
 
-    @callback
-    def returned_image_data(self, data: object, width: int, height: int):
-        """
-        """
+            def update_view_size(self, width: float, height: float):
+                """
+                """
+                
+            def get_presets(self):
+                """
+                """
+            
+            def returned_image_data(self, data: object, width: int, height: int):
+                """
+                """
+            
+            def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
+                """
+                """
+            
+            def blit_buffer(self, data: object):
+                """
+                """
 
-    @callback
-    def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
-        """
-        """
-    @callback
-    def blit_buffer(self, data: object):
-        """
-        """
-
-    @callback
-    def set_camera_texture(self, width: int, height: int):
-        """
-        """
+            
+            def set_camera_texture(self, width: int, height: int):
+                """
+                """
 
 
 from kivy.uix.floatlayout import FloatLayout

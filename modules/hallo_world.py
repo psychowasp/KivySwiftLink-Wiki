@@ -14,7 +14,3 @@ class HalloWorld:
         """
         """
 
-    @callback
-    def fake_func(self):
-        """
-        """
