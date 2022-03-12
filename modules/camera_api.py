@@ -18,6 +18,10 @@ class CameraConfigMode:
     Video = 3
     Vision = 4
     CoreML = 7
+    
+    def test():
+        """
+        """
 
 
 # class KivyTextureKeys(ObjectStrEnum):
