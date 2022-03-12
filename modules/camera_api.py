@@ -145,97 +145,97 @@ Builder.load_string("""
 """)
 
 
-class CameraView(RelativeLayout, CameraApi):
-    tex = ObjectProperty(None)
-    touch_pos = ListProperty([0, 0])
-    touched = NumericProperty(0)
-    capture_outline_color = ColorProperty()
-    capture_outline_alpha = NumericProperty(0.0)
-    preview_buffersize: int
+# class CameraView(RelativeLayout, CameraApi):
+#     tex = ObjectProperty(None)
+#     touch_pos = ListProperty([0, 0])
+#     touched = NumericProperty(0)
+#     capture_outline_color = ColorProperty()
+#     capture_outline_alpha = NumericProperty(0.0)
+#     preview_buffersize: int
 
-    def get_image_ratio(self):
-        """_summary_
+#     def get_image_ratio(self):
+#         """_summary_
 
-        Returns:
-            _type_: _description_
-        """
-        print('get_image_ratio')
-        tex = self.tex
-        if tex:
-            return tex.width / float(tex.height)
-        return 1.0
-    image_ratio = AliasProperty(get_image_ratio, bind=('tex',), cache=True)
+#         Returns:
+#             _type_: _description_
+#         """
+#         print('get_image_ratio')
+#         tex = self.tex
+#         if tex:
+#             return tex.width / float(tex.height)
+#         return 1.0
+#     image_ratio = AliasProperty(get_image_ratio, bind=('tex',), cache=True)
 
-    def get_norm_image_size(self):
-        tex = self.tex
-        if not tex:
-            return list(self.size)
-        ratio = self.image_ratio
-        w, h = self.size
-        iw = w
-        ih = iw / ratio
-        if ih > h:
-            ih = h
-            iw = ih * ratio
-        return [iw, ih]
-    norm_image_size = AliasProperty(get_norm_image_size, bind=('tex', 'size', 'image_ratio'), cache=True)
+#     def get_norm_image_size(self):
+#         tex = self.tex
+#         if not tex:
+#             return list(self.size)
+#         ratio = self.image_ratio
+#         w, h = self.size
+#         iw = w
+#         ih = iw / ratio
+#         if ih > h:
+#             ih = h
+#             iw = ih * ratio
+#         return [iw, ih]
+#     norm_image_size = AliasProperty(get_norm_image_size, bind=('tex', 'size', 'image_ratio'), cache=True)
 
-    def get_offset_pos(self):
-        w, h = self.size
-        tw, th = self.norm_image_size
-        offset_x = (w - tw) / 2
-        offset_y = (h - th) / 2
-        return [self.x + offset_x, self.y + offset_y]
-    offset_pos = AliasProperty(get_offset_pos, bind=('norm_image_size', 'pos'), cache=True)
+#     def get_offset_pos(self):
+#         w, h = self.size
+#         tw, th = self.norm_image_size
+#         offset_x = (w - tw) / 2
+#         offset_y = (h - th) / 2
+#         return [self.x + offset_x, self.y + offset_y]
+#     offset_pos = AliasProperty(get_offset_pos, bind=('norm_image_size', 'pos'), cache=True)
 
-    def __init__(self, **kw):
-        app = ObjectProperty(None)
-        self.bind(offset_pos=self.send_texture_pos)
-        self.bind(norm_image_size=self.send_texture_size)
-        super(CameraView, self).__init__(callback_class=self, **kw)
-        self.update_cam = self.canvas.ask_update
-        self.preview_buffersize = 0
-        self.set_camera_texture(2160, 3840)
+#     def __init__(self, **kw):
+#         app = ObjectProperty(None)
+#         self.bind(offset_pos=self.send_texture_pos)
+#         self.bind(norm_image_size=self.send_texture_size)
+#         super(CameraView, self).__init__(callback_class=self, **kw)
+#         self.update_cam = self.canvas.ask_update
+#         self.preview_buffersize = 0
+#         self.set_camera_texture(2160, 3840)
 
-    def set_camera_texture(self, width: int, height: int) ->Texture:
-        print('set_camera_texture', width, height)
-        tex: Texture = Texture.create(size=(width, height), colorfmt='bgra', bufferfmt='ubyte')
-        tex.flip_vertical()
-        self.tex = tex
-        return tex
+#     def set_camera_texture(self, width: int, height: int) ->Texture:
+#         print('set_camera_texture', width, height)
+#         tex: Texture = Texture.create(size=(width, height), colorfmt='bgra', bufferfmt='ubyte')
+#         tex.flip_vertical()
+#         self.tex = tex
+#         return tex
 
-    def new_texture(self, size, fmt):
-        print('set_camera_texture', size)
-        tex: Texture = Texture.create(size=size, colorfmt=fmt, bufferfmt='ubyte')
-        tex.flip_vertical()
-        self.tex = tex
+#     def new_texture(self, size, fmt):
+#         print('set_camera_texture', size)
+#         tex: Texture = Texture.create(size=size, colorfmt=fmt, bufferfmt='ubyte')
+#         tex.flip_vertical()
+#         self.tex = tex
 
-    def blit_buffer(self, mem):
-        print('blit_buffer', len(mem))
+#     def blit_buffer(self, mem):
+#         print('blit_buffer', len(mem))
 
-    def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
-        if pixel_count != self.preview_buffersize:
-            tex = self.set_camera_texture(width, height)
-            self.preview_buffersize = pixel_count
-            print(self, f'changed resolution to {width}x{height}')
-        else:
-            tex = self.tex
-        if tex:
-            tex.blit_buffer(data, colorfmt='bgra')
-            self.update_cam()
+#     def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
+#         if pixel_count != self.preview_buffersize:
+#             tex = self.set_camera_texture(width, height)
+#             self.preview_buffersize = pixel_count
+#             print(self, f'changed resolution to {width}x{height}')
+#         else:
+#             tex = self.tex
+#         if tex:
+#             tex.blit_buffer(data, colorfmt='bgra')
+#             self.update_cam()
 
-    def blit_buffer(self, data: object):
-        self.tex.blit_buffer(data, colorfmt='bgra')
-        self.update_cam()
+#     def blit_buffer(self, data: object):
+#         self.tex.blit_buffer(data, colorfmt='bgra')
+#         self.update_cam()
 
-    def returned_image_data(self, data: object, width: int, height: int):
-        """
-        """
+#     def returned_image_data(self, data: object, width: int, height: int):
+#         """
+#         """
 
-    def send_texture_pos(self, _, pos):
-        x, y = pos
-        self.update_view_pos(x, y)
+#     def send_texture_pos(self, _, pos):
+#         x, y = pos
+#         self.update_view_pos(x, y)
 
-    def send_texture_size(self, _, size):
-        w, h = size
-        self.update_view_size(w, h)
+#     def send_texture_size(self, _, size):
+#         w, h = size
+#         self.update_view_size(w, h)
