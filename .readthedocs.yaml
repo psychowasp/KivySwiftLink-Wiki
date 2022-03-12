@@ -9,6 +9,12 @@ build:
 sphinx:
   configuration: docs/conf.py
 
+dependencies:
+  - sphinx==4.4.0
+  - pip:
+    - sphinx_rtd_theme==1.0.0
+
+
 # Explicitly set the version of Python and its requirements
 python:
   install:
