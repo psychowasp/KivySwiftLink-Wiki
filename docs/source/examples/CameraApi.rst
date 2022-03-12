@@ -631,7 +631,7 @@ Api:
 
 Enums:
 """"""
-.. autoclass:: camera_api.CameraConfigMode
+.. autoclass:: camera_api.TestClass
     :members:
     :inherited-members:
 
