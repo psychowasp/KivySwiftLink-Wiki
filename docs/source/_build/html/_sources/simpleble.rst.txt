@@ -1,9 +1,17 @@
 Documentation
 =================
 
-
-.. automodule:: swift_types
+.. autoclass:: swift_types.SignedIntegers
     :members:
-    :undoc-members:
 
+.. autoclass:: swift_types.UnsignedIntegers
+    :members:
+
+.. autoclass:: swift_types.Sequences
+    :members:
+
+
+
+
+test
 
