@@ -43,34 +43,92 @@
 #     ]
 class int():
     """
+    +--------+-----+-------+
+    | python | <-> | swift |
+    +========+=====+=======+
+    | int    |     | Int   |
+    +--------+-----+-------+
     """
 
 class uint():
     """
+    +--------+-----+-------+
+    | python | <-> | swift |
+    +========+=====+=======+
+    | int    |     | UInt  |
+    +--------+-----+-------+
     """
 
 class int32():
     """
+    +--------+-----+-------+
+    | python | <-> | swift |
+    +========+=====+=======+
+    | int    |     | Int32 |
+    +--------+-----+-------+
     """
 
 class uint32():
     """
+    +--------+-----+---------+
+    | python | <-> | swift   |
+    +========+=====+=========+
+    | int    |     | UInt32  |
+    +--------+-----+---------+
     """
     
 class int16():
     """
+    py: int <-> swift: Int16
     """
 
 class uint16():
     """
+    py: int <-> swift: UInt16
     """
     
 class int8():
     """
+    py: int <-> swift: Int8
     """
 
 class uint8():
     """
+    +--------+-----+--------+
+    | python | <-> | swift  |
+    +========+=====+========+
+    | str    |     | String |
+    +--------+-----+--------+
+    """
+    
+class str():
+    """
+    py: :attr:`str` <-> swift: :attr:`String`
+    """
+
+class list():
+    """
+    py: list <-> swift: Array
+
+        #list[int] <-> Array<Int>
+        #list[uint8] <-> Array<UInt8>
+        #list[str] <-> Array<String>
+        
+    """
+    
+class memoryview():
+    """
+    py: memoryview <-> swift: Array
+
+        memoryview[int] <-> Array<Int>
+        memoryview[uint8] <-> Array<UInt8>
+        memoryview[str] <-> Array<String>
+        
+    """
+    
+class data():
+    """
+    py: memoryview[uint8] <-> swift: Data
     """
     
 # long = object
