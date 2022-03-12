@@ -5,6 +5,7 @@
 #from ctypes import c_int8 as
 from builtins import *
 from subprocess import call
+from typing import List as list
 
 # __all__ = im[
 #     "long",
