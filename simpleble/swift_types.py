@@ -3,9 +3,9 @@
 # from enum import Enum
 # from collections.abc import Sequence as sequence
 #from ctypes import c_int8 as
+from builtins import *
 
-
-# __all__ = [
+# __all__ = im[
 #     "long",
 #     "ulong",
 #     "longlong",
@@ -46,11 +46,11 @@ class SignedIntegers:
 
     class int(int):
         """\
-        +-------------+-----+-------------+
-        |    python   | <-> |    swift    |
-        +=============+=====+=============+
-        | :attr:`int` |     | :attr:`Int` |
-        +-------------+-----+-------------+
+        +--------+-----+-------+
+        | python | <-> | swift |
+        +========+=====+=======+
+        |   int  |     |  Int  |
+        +--------+-----+-------+
         """
 
     class int32(int):
@@ -65,20 +65,20 @@ class SignedIntegers:
         
     class int16(int):
         """
-        +--------+-----+---------------+
-        | python | <-> | swift         |
-        +========+=====+===============+
-        | int    |     | :attr:`index` |
-        +--------+-----+---------------+
+        +--------+-----+-------+
+        | python | <-> | swift |
+        +========+=====+=======+
+        | int    |     | Int16 |
+        +--------+-----+-------+
         """
 
     class int8():
         """
-        +--------+-----+---------------+
-        | python | <-> | swift         |
-        +========+=====+===============+
-        | int    |     | :attr:`index` |
-        +--------+-----+---------------+
+        +--------+-----+-------+
+        | python | <-> | swift |
+        +========+=====+=======+
+        | int    |     | Int8  |
+        +--------+-----+-------+
         """
 
 class UnsignedIntegers:
@@ -104,24 +104,30 @@ class UnsignedIntegers:
 
     class uint16():
         """
-        py: int <-> swift: UInt16
+        +--------+-----+--------+
+        | python | <-> |  swift |
+        +========+=====+========+
+        |   int  |     | UInt16 |
+        +--------+-----+--------+
         """
         
 
 
     class uint8():
         """
-        +--------+-----+--------+
-        | python | <-> | swift  |
-        +========+=====+========+
-        | str    |     | String |
-        +--------+-----+--------+
+        +--------+-----+-------+
+        | python | <-> | swift |
+        +========+=====+=======+
+        |   int  |     | UInt8 |
+        +--------+-----+-------+
         """
     
-class str():
-    """
-    py: :attr:`str` <-> swift: :attr:`String`
-    """
+class String_Bytes():
+
+    class str:
+        """
+        py: :attr:`str` <-> swift: :attr:`String`
+        """
 class Sequences:
     class list():
         """
@@ -177,7 +183,7 @@ class ClassDecorators:
         """
 
         """
-        def __init__(self, singleton=True, event_dispatch=False, events = []): ...
+        def __init__(self, singleton=True, event_dispatch=False, events: list[str] = []): ...
     class python:
         """
 

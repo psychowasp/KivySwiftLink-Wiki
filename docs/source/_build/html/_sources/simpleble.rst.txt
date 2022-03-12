@@ -17,13 +17,16 @@ Types:
 
 ``Strings``
 ^^^^^^^^^^^^^^^^^^
-.. autoclass:: swift_types.str
+.. autoclass:: swift_types.String_Bytes
     :members:
 
 ``Sequences``
 ^^^^^^^^^^^^^^^^^^
 .. autoclass:: swift_types.Sequences
     :members:
+
+
+
 
 Decorators:
 -----------------

@@ -17,7 +17,7 @@ Types:
 
 ``Strings``
 ^^^^^^^^^^^^^^^^^^
-.. autoclass:: swift_types.str
+.. autoclass:: swift_types.String_Bytes
     :members:
 
 ``Sequences``
