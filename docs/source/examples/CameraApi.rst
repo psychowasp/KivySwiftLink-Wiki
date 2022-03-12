@@ -1,5 +1,5 @@
-Examples
-=============
+CameraApi example
+=================
 
 
 
@@ -18,7 +18,7 @@ Wrapper file:
         PhotoPng = 2
         Video = 3
         Vision = 4
-        CoreML = 7
+        CoreML = 5
         
 
     class KivyTextureKeys(ObjectStrEnum):

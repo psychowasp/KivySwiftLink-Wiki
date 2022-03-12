@@ -42,6 +42,10 @@ from builtins import *
 #     "ObjectIntEnum"
 #     ]
 
+__all__ = [
+    "callback"
+] 
+
 class SignedIntegers:
 
     class int(int):
@@ -195,13 +199,16 @@ class FunctionDecorators:
     """
     class callback:
         """
-
+        callback
         """
         def __init__(self, optional=False, direct=False):...
     class swift_function:
         """
 
         """
+        
+        
+callback = FunctionDecorators.callback
 # long = object
 # ulong = object
 # longlong = object

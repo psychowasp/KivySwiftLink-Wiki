@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to ``KivySwiftLink``'s documentation!
-=========================================
+=============================================
 
 .. toctree::
    :maxdepth: 2
@@ -12,7 +12,7 @@ Welcome to ``KivySwiftLink``'s documentation!
    
    intro
    documentation
-   examples
+   modules
 
 .. code-block:: swift
    :linenos:

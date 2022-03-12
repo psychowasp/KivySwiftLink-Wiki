@@ -66,7 +66,7 @@ class CameraApi:
     def auto_exposure(self, state: bool):
         """
         """
-
+    @callback
     def set_preview_size(self, width: int, height: int):
         """
         """
@@ -75,26 +75,31 @@ class CameraApi:
         """
         """
 
+    @callback
     def update_view_size(self, width: float, height: float):
         """
         """
-
+        
+    @callback
     def get_presets(self):
         """
         """
 
+    @callback
     def returned_image_data(self, data: object, width: int, height: int):
         """
         """
 
+    @callback
     def preview_pixel_data(self, data: object, width: int, height: int, pixel_count: int):
         """
         """
-
+    @callback
     def blit_buffer(self, data: object):
         """
         """
 
+    @callback
     def set_camera_texture(self, width: int, height: int):
         """
         """
