@@ -2,8 +2,9 @@ from swift_types import *
 
 
 class HalloWorld:
-
-    def hello_world(path: str):
+    """_summary_
+    """
+    def hello_world(self, string: str):
         """
         """
 

@@ -209,7 +209,8 @@ class FunctionDecorators:
         
         
 callback = FunctionDecorators.callback
-
+wrapper = ClassDecorators.wrapper
+python = ClassDecorators.python
 # long = object
 # ulong = object
 # longlong = object
