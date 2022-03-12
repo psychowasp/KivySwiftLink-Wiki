@@ -627,12 +627,15 @@ Swift:
     }
 
 Api:
-******
+****
 
+Enums:
+""""""
 .. autoclass:: camera_api.CameraConfigMode
     :members:
     :undoc-members:
-
+WrapperClass:
+"""""""""""""
 .. autoclass:: camera_api.CameraApi
     :members:
 
@@ -643,6 +646,6 @@ Addon Classes:
 """"""""""""""
 .. autoclass:: camera_api.CameraView
     :members:
-    :undoc-members:
+
         
         
