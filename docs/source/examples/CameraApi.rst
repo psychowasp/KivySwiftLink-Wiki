@@ -639,7 +639,10 @@ Api:
 .. autoclass:: camera_api.CameraApi.Callbacks
     :members:
 
-
+Addon Classes:
+""""""""""""""
+.. autoclass:: camera_api.CameraView
+    :members:
 
         
         
