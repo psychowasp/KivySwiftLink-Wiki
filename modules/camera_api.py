@@ -19,7 +19,7 @@ class CameraConfigMode:
     Vision = 4
     CoreML = 7
     
-    def test():
+    def test(self):
         """
         """
 
