@@ -21,9 +21,9 @@ print(path)
 
 # -- Project information -----------------------------------------------------
 
-project = 'simpleble'
-copyright = '2018, Lyudmil Vladimirov'
-author = 'Lyudmil Vladimirov'
+project = 'KivySwiftLink'
+copyright = ''
+author = ''
 
 # The short X.Y version
 version = ''
@@ -106,7 +106,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'simplebledoc'
+htmlhelp_basename = 'KivySwiftLinkdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -133,7 +133,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'simpleble.tex', 'simpleble Documentation',
+    (master_doc, 'simpleble.tex', 'KivySwiftLink Documentation',
      'Lyudmil Vladimirov', 'manual'),
 ]
 
@@ -143,7 +143,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'simpleble', 'simpleble Documentation',
+    (master_doc, 'KivySwiftLink', 'KivySwiftLink Documentation',
      [author], 1)
 ]
 
