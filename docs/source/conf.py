@@ -136,8 +136,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'simpleble.tex', 'KivySwiftLink Documentation',
-     'Lyudmil Vladimirov', 'manual'),
+    (master_doc, 'KivySwiftLink Documentation'),
 ]
 
 
