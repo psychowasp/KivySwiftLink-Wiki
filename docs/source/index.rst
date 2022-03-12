@@ -11,7 +11,7 @@ Welcome to ``KivySwiftLink``'s documentation!
    :caption: Contents
    
    intro
-   documentations
+   documentation
    modules
 
 .. code-block:: swift
