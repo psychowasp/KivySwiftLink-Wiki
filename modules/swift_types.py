@@ -4,6 +4,7 @@
 # from collections.abc import Sequence as sequence
 #from ctypes import c_int8 as
 from builtins import *
+from subprocess import call
 
 # __all__ = im[
 #     "long",
@@ -186,6 +187,9 @@ class ClassDecorators:
 
         """
         def __init__(self, singleton=True, event_dispatch=False, events: list[str] = []): ...
+        
+        def __call__(self,*args): ...
+        
     class python:
         """
 
@@ -200,6 +204,9 @@ class FunctionDecorators:
         callback
         """
         def __init__(self, optional=False, direct=False):...
+        
+        def __call__(self,*args): ...
+        
     class swift_function:
         """
 
