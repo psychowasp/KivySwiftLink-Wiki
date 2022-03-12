@@ -629,15 +629,5 @@ Swift:
 Api:
 ******
 
-.. autoclass:: camera_api.CameraConfigMode
-    :members:
-    :undoc-members:
 
-.. autoclass:: camera_api.CameraApi
-    :members:
-
-.. autoclass:: camera_api.CameraView
-    :members:
-    :undoc-members:
-        
         

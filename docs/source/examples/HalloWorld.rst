@@ -629,7 +629,4 @@ Swift:
 Api:
 ******
 
-.. autoclass:: hallo_world.HalloWorld
-    :members:
-        
-        
+
