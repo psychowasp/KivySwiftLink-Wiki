@@ -19,6 +19,19 @@ class CameraConfigMode:
         """
 
 
+class TestClass(object):
+    """
+    """
+
+    def gssfsfsd(self,sdf:int):
+        """_summary_
+
+        Args:
+            sdf (int): _description_
+
+        Returns:
+            _type_: _description_
+        """
 # class KivyTextureKeys(ObjectStrEnum):
 #     cfmt = 'colorfmt'
 #     bfmt = 'bufferfmt'
