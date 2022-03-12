@@ -4,9 +4,7 @@ from enum import Enum
 ObjectStrEnum = Enum
 
 class CameraConfigMode:
-    """
-    """
-    QRcode = 0
+    QRcode: int = 0
     PhotoRaw = 1
     PhotoPng = 2
     Video = 3
