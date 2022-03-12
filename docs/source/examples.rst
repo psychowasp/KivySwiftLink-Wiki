@@ -625,7 +625,8 @@ Swift:
         
     
     }
-
+Api:
+******
 
 .. autoclass:: camera_api.CameraApi
     :members:
