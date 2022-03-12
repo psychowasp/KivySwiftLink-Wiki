@@ -633,7 +633,6 @@ Enums:
 """"""
 .. autoclass:: camera_api.TestClass
     :members:
-    :inherited-members:
 
 WrapperClass:
 """""""""""""
