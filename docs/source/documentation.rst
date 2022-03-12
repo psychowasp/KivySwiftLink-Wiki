@@ -7,22 +7,23 @@ Types:
 
 ``SignedIntegers``
 ^^^^^^^^^^^^^^^^^^
-.. autoclass:: swift_types.integers.SignedIntegers
+.. autoclass:: swift_types.SignedIntegers
     :members:
+    :undoc-members:
     
 ``UnsignedIntegers``
 ^^^^^^^^^^^^^^^^^^^^
-.. autoclass:: swift_types.integers.UnsignedIntegers
+.. autoclass:: swift_types.UnsignedIntegers
     :members:
 
-``Strings``
-^^^^^^^^^^^^^^^^^^
-.. autoclass:: swift_types.string_bytes.String_Bytes
+``Strings & Bytes``
+^^^^^^^^^^^^^^^^^^^
+.. autoclass:: swift_types.String_Bytes
     :members:
 
 ``Sequences``
 ^^^^^^^^^^^^^^^^^^
-.. autoclass:: swift_types.sequences.Sequences
+.. autoclass:: swift_types.Sequences
     :members:
 
 
@@ -33,10 +34,10 @@ Decorators:
 
 Class Decorators
 ^^^^^^^^^^^^^^^^
-.. automodule:: swift_types.class_decorators
+.. autoclass:: swift_types.ClassDecorators
     :members:
 
 Function Decorators
 ^^^^^^^^^^^^^^^^^^^
-.. automodule:: swift_types.function_decorators
+.. autoclass:: swift_types.FunctionDecorators
     :members:

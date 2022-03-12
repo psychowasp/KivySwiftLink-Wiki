@@ -17,7 +17,7 @@ import sys
 from os.path import join
 path = os.path.abspath('../../modules/')
 sys.path.insert(0, path)
-sys.path.insert(1, join(path, "swift_types/"))
+sys.path.insert(1, join(path, "__swift_types/"))
 #sys.path.insert(1, join(path, "swift_types/signed_integers"))
 
 
