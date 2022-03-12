@@ -3,8 +3,16 @@ from swift_types import *
 from enum import Enum
 ObjectStrEnum = Enum
 
-class CameraConfigMode(object):
-    QRcode: int = 0
+class CameraConfigMode:
+    """
+    QRcode = 0
+    PhotoRaw = 1
+    PhotoPng = 2
+    Video = 3
+    Vision = 4
+    CoreML = 7
+    """
+    QRcode = 0
     PhotoRaw = 1
     PhotoPng = 2
     Video = 3
@@ -52,7 +60,7 @@ class CameraApi:
                 """
     def __init__(self,callback_class: Callbacks):...
     
-    def start_capture(self, mode: int, callback_cls: object):
+    def start_capture(self, mode: CameraConfigMode, callback_cls: object):
         """
         """
 
