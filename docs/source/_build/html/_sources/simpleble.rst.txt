@@ -1,17 +1,24 @@
 Documentation
 =================
 
+``SignedIntegers``
+******************
 .. autoclass:: swift_types.SignedIntegers
     :members:
 
+``UnsignedIntegers``
+********************
 .. autoclass:: swift_types.UnsignedIntegers
     :members:
 
-.. autoclass:: swift_types.Sequences
+
+``Strings``
+***********
+.. autoclass:: swift_types.str
     :members:
 
-
-
-
-test
+``Sequences``
+*************
+.. autoclass:: swift_types.Sequences
+    :members:
 
