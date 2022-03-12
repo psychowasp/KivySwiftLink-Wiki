@@ -72,7 +72,7 @@ class CameraApi:
                 """
     def __init__(self,callback_class: Callbacks):...
     
-    def start_capture(self, mode: CameraConfigMode, callback_cls: object):
+    def start_capture(self, mode: int, callback_cls: object):
         """
         """
 
