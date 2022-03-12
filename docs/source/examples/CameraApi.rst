@@ -638,7 +638,5 @@ Enums:
     :members:
         
         
-Addon Classes:
-""""""""""""""
-.. autoclass:: camera_api.CameraView
+.. autoclass:: camera_api.CameraApi
     :members:
