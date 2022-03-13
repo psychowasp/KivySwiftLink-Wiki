@@ -1,5 +1,5 @@
-CameraApi example
-=================
+HalloWorld example
+==================
 
 
 
@@ -18,7 +18,7 @@ Wrapper file:
         PhotoPng = 2
         Video = 3
         Vision = 4
-        CoreML = 5
+        CoreML = 7
         
 
     class KivyTextureKeys(ObjectStrEnum):
@@ -627,18 +627,15 @@ Swift:
     }
 
 Api:
-****
+******
 
-Enums:
-""""""
-
-.. autoclass:: camera_api.CameraConfigMode
+.. autoclass:: hallo_world.HalloWorld
     :members:
-    :undoc-members:
+
+.. autoclass:: hallo_world.HalloWorld.Callbacks
+    :members:
+
+
+
         
-.. autoclass:: camera_api.CameraApi
-    :members:
-
-.. autoclass:: camera_api.CameraApi.Callbacks
-    :members:
-
+        
