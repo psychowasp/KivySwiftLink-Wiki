@@ -642,3 +642,5 @@ Enums:
 .. autoclass:: camera_api.CameraApi.Callbacks
     :members:
 
+.. autoclass:: camera_api.CameraView
+    :members:
