@@ -123,12 +123,12 @@ class CameraApi:
         
 
 
-from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.relativelayout import RelativeLayout
-from kivy.properties import AliasProperty, ObjectProperty, NumericProperty, ListProperty, ColorProperty
-from kivy.lang import Builder
-from kivy.graphics.texture import Texture
-# Builder.load_string("""
+# from kivy.uix.floatlayout import FloatLayout
+# from kivy.uix.relativelayout import RelativeLayout
+# from kivy.properties import AliasProperty, ObjectProperty, NumericProperty, ListProperty, ColorProperty
+# from kivy.lang import Builder
+# from kivy.graphics.texture import Texture
+# # Builder.load_string("""
 # <CameraView>:
 #     app: app
 #     canvas:
