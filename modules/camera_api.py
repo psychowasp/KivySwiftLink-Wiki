@@ -128,21 +128,21 @@ from kivy.uix.relativelayout import RelativeLayout
 from kivy.properties import AliasProperty, ObjectProperty, NumericProperty, ListProperty, ColorProperty
 from kivy.lang import Builder
 from kivy.graphics.texture import Texture
-Builder.load_string("""
-<CameraView>:
-    app: app
-    canvas:
-        Rectangle:
-            texture: self.tex
-            pos: self.offset_pos
-            size: self.norm_image_size
-        Color:
-            rgb: self.capture_outline_color[:3]
-            a: self.capture_outline_alpha
-        Line:
-            width: 8
-            rectangle: self.x, self.y - 8 , self.width - 8, self.height - 8         
-""")
+# Builder.load_string("""
+# <CameraView>:
+#     app: app
+#     canvas:
+#         Rectangle:
+#             texture: self.tex
+#             pos: self.offset_pos
+#             size: self.norm_image_size
+#         Color:
+#             rgb: self.capture_outline_color[:3]
+#             a: self.capture_outline_alpha
+#         Line:
+#             width: 8
+#             rectangle: self.x, self.y - 8 , self.width - 8, self.height - 8         
+# """)
 
 
 # class CameraView(RelativeLayout, CameraApi):
