@@ -81,7 +81,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_pdj_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -93,7 +93,7 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 
-html_static_path = ['_static']
+#html_static_path = ['../docs/_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -102,7 +102,7 @@ html_static_path = ['_static']
 # defined by theme itself.  Builtin themes are using these templates by
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
-#
+##
 # html_sidebars = {}
 
 

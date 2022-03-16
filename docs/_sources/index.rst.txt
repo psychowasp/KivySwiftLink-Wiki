@@ -7,22 +7,12 @@ Welcome to ``KivySwiftLink``'s documentation!
 =============================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents
-   
-   intro
+   :maxdepth: 1
+   :caption: Content
+
    documentation
    modules
 
-.. code-block:: swift
-   :linenos:
-
-   struct SomeSwiftClass {
-      var a: Int
-      var b: Double
-      var c: String
-      let d: Data
-   }
 
 Indices and tables
 ==================

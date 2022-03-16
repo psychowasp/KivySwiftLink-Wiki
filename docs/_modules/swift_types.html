@@ -71,8 +71,6 @@
 <span class="c1"># from collections.abc import Sequence as sequence</span>
 <span class="c1">#from ctypes import c_int8 as</span>
 <span class="kn">from</span> <span class="nn">builtins</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">call</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="nb">list</span>
 
 <span class="c1"># __all__ = im[</span>
 <span class="c1">#     &quot;long&quot;,</span>
@@ -111,12 +109,15 @@
 <span class="c1">#     &quot;ObjectIntEnum&quot;</span>
 <span class="c1">#     ]</span>
 
-
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;callback&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;int&quot;</span>
+<span class="p">]</span> 
 
 <div class="viewcode-block" id="SignedIntegers"><a class="viewcode-back" href="../documentation.html#swift_types.SignedIntegers">[docs]</a><span class="k">class</span> <span class="nc">SignedIntegers</span><span class="p">:</span>
 
 <div class="viewcode-block" id="SignedIntegers.int"><a class="viewcode-back" href="../documentation.html#swift_types.SignedIntegers.int">[docs]</a>    <span class="k">class</span> <span class="nc">int</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;\</span>
 <span class="sd">        +--------+-----+-------+</span>
 <span class="sd">        | python | &lt;-&gt; | swift |</span>
 <span class="sd">        +========+=====+=======+</span>
@@ -252,54 +253,41 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">class</span> <span class="nc">wrapper</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">singleton</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">event_dispatch</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">events</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]):</span> <span class="o">...</span>
-        
-        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="o">...</span>
-        
     <span class="k">class</span> <span class="nc">python</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
 
 <span class="k">class</span> <span class="nc">FunctionDecorators</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">class</span> <span class="nc">callback</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        callback</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optional</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">direct</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span><span class="o">...</span>
-        
-        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="o">...</span>
-        
     <span class="k">class</span> <span class="nc">swift_function</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         
         
-<span class="c1"># callback = FunctionDecorators.callback()</span>
-<span class="c1"># wrapper = ClassDecorators.wrapper()</span>
-<span class="c1"># python = ClassDecorators.python()</span>
+<span class="n">callback</span> <span class="o">=</span> <span class="n">FunctionDecorators</span><span class="o">.</span><span class="n">callback</span>
+<span class="n">wrapper</span> <span class="o">=</span> <span class="n">ClassDecorators</span><span class="o">.</span><span class="n">wrapper</span>
+<span class="n">python</span> <span class="o">=</span> <span class="n">ClassDecorators</span><span class="o">.</span><span class="n">python</span>
 
+<span class="n">uint</span> <span class="o">=</span> <span class="n">UnsignedIntegers</span><span class="o">.</span><span class="n">uint</span>
+<span class="n">uint32</span> <span class="o">=</span> <span class="n">UnsignedIntegers</span><span class="o">.</span><span class="n">uint32</span>
+<span class="n">unit16</span> <span class="o">=</span> <span class="n">UnsignedIntegers</span><span class="o">.</span><span class="n">uint16</span>
+<span class="n">uint8</span> <span class="o">=</span> <span class="n">UnsignedIntegers</span><span class="o">.</span><span class="n">uint8</span>
 
-
-<span class="c1"># long = object</span>
-<span class="c1"># ulong = object</span>
-<span class="c1"># longlong = object</span>
-<span class="c1"># ulonglong = object</span>
-<span class="c1"># uint8 = object</span>
-<span class="c1"># short = object</span>
-<span class="c1"># int16 = object</span>
-<span class="c1"># ushort = object</span>
-<span class="c1"># uint16 = object</span>
-<span class="c1"># data = object</span>
-<span class="c1"># json = object</span>
-<span class="c1"># jsondata = object</span>
-<span class="c1"># uint = object</span>
-<span class="c1"># double = object</span>
-<span class="c1"># float32 = object</span>
-<span class="c1"># longdouble = object</span>
+<span class="n">int32</span> <span class="o">=</span> <span class="n">SignedIntegers</span><span class="o">.</span><span class="n">int32</span>
+<span class="n">int16</span> <span class="o">=</span> <span class="n">SignedIntegers</span><span class="o">.</span><span class="n">int16</span>
+<span class="n">int8</span> <span class="o">=</span> <span class="n">SignedIntegers</span><span class="o">.</span><span class="n">int8</span>
 
 
 <span class="c1"># def EventDispatcher(_(): list[str])(): ...</span>

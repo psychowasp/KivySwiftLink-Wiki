@@ -4,8 +4,6 @@
 # from collections.abc import Sequence as sequence
 #from ctypes import c_int8 as
 from builtins import *
-from subprocess import call
-from typing import List as list
 
 # __all__ = im[
 #     "long",
@@ -44,12 +42,15 @@ from typing import List as list
 #     "ObjectIntEnum"
 #     ]
 
-
+__all__ = [
+    "callback",
+    "int"
+] 
 
 class SignedIntegers:
 
     class int(int):
-        """
+        """\
         +--------+-----+-------+
         | python | <-> | swift |
         +========+=====+=======+
@@ -185,54 +186,41 @@ class ClassDecorators:
     """
     class wrapper:
         """
+
         """
         def __init__(self, singleton=True, event_dispatch=False, events: list[str] = []): ...
-        
-        def __call__(self,*args): ...
-        
     class python:
         """
+
         """
 
 class FunctionDecorators:
     """
+
     """
     class callback:
         """
         callback
         """
         def __init__(self, optional=False, direct=False):...
-        
-        def __call__(self,*args): ...
-        
     class swift_function:
         """
 
         """
         
         
-# callback = FunctionDecorators.callback()
-# wrapper = ClassDecorators.wrapper()
-# python = ClassDecorators.python()
+callback = FunctionDecorators.callback
+wrapper = ClassDecorators.wrapper
+python = ClassDecorators.python
 
+uint = UnsignedIntegers.uint
+uint32 = UnsignedIntegers.uint32
+unit16 = UnsignedIntegers.uint16
+uint8 = UnsignedIntegers.uint8
 
-
-# long = object
-# ulong = object
-# longlong = object
-# ulonglong = object
-# uint8 = object
-# short = object
-# int16 = object
-# ushort = object
-# uint16 = object
-# data = object
-# json = object
-# jsondata = object
-# uint = object
-# double = object
-# float32 = object
-# longdouble = object
+int32 = SignedIntegers.int32
+int16 = SignedIntegers.int16
+int8 = SignedIntegers.int8
 
 
 # def EventDispatcher(_(): list[str])(): ...

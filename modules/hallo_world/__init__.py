@@ -1,6 +1,5 @@
 from swift_types import *
 
-
 class HalloWorld:
     """_summary_
     """
