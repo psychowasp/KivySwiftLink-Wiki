@@ -6,4 +6,6 @@ Examples
 
    examples/HalloWorld
 
+   examples/HalloWorld2
+
    examples/CameraApi
