@@ -27,8 +27,7 @@ Api:
 .. autoclass:: hallo_world.HalloWorld
     :members:
 
-.. autoclass:: hallo_world.HalloWorld.Callbacks
-    :members:
+
 
 
         
