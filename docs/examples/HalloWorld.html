@@ -88,16 +88,16 @@
 <h1>HalloWorld example<a class="headerlink" href="#halloworld-example" title="Permalink to this headline"></a></h1>
 <section id="wrapper-file">
 <h2>Wrapper file:<a class="headerlink" href="#wrapper-file" title="Permalink to this headline"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">swift_types</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="nd">@wrapper</span>
-<span class="linenos"> 5</span><span class="k">class</span> <span class="nc">HalloWorld</span><span class="p">:</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span>    <span class="k">def</span> <span class="nf">send_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="linenos"> 8</span>        <span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 9</span><span class="sd">        Sends a str to swift.</span>
-<span class="linenos">10</span><span class="sd">        &quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">swift_types</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="nd">@wrapper</span>
+<span class="k">class</span> <span class="nc">HalloWorld</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">send_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sends a str to swift.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -105,42 +105,42 @@
 <h2>Swift:<a class="headerlink" href="#swift" title="Permalink to this headline"></a></h2>
 <section id="hallo-world-swift">
 <h3>hallo_world.swift<a class="headerlink" href="#hallo-world-swift" title="Permalink to this headline"></a></h3>
-<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">import</span> <span class="nc">Foundation</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="kd">class</span> <span class="nc">HalloWorld</span> <span class="p">{</span>
-<span class="linenos"> 4</span>    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
-<span class="linenos"> 5</span>        <span class="n">InitHalloWorld_Delegate</span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
-<span class="linenos"> 6</span>    <span class="p">}</span>
-<span class="linenos"> 7</span><span class="p">}</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="kd">extension</span> <span class="nc">HalloWorld</span><span class="p">:</span> <span class="n">HalloWorld_Delegate</span> <span class="p">{</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span>    <span class="kd">func</span> <span class="nf">send_string</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos">12</span>        <span class="bp">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-<span class="linenos">13</span>    <span class="p">}</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="p">}</span>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="kd">class</span> <span class="nc">HalloWorld</span> <span class="p">{</span>
+    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">InitHalloWorld_Delegate</span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="nc">HalloWorld</span><span class="p">:</span> <span class="n">HalloWorld_Delegate</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">send_string</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="pythonmain-swift">
 <h3>PythonMain.swift<a class="headerlink" href="#pythonmain-swift" title="Permalink to this headline"></a></h3>
-<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">//</span>
-<span class="linenos"> 2</span><span class="c1">//  PythonMain.swift</span>
-<span class="linenos"> 3</span><span class="c1">//</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="kd">import</span> <span class="nc">Foundation</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="kd">class</span> <span class="nc">PythonMain</span> <span class="p">{</span>
-<span class="linenos"> 8</span>    
-<span class="linenos"> 9</span>    <span class="kd">static</span> <span class="kd">let</span> <span class="nv">shared</span> <span class="p">=</span> <span class="n">PythonMain</span><span class="p">()</span>
-<span class="linenos">10</span>    
-<span class="hll"><span class="linenos">11</span>    <span class="kd">let</span> <span class="nv">hallo_world</span> <span class="p">=</span> <span class="n">HalloWorld</span><span class="p">()</span>
-</span><span class="linenos">12</span>    
-<span class="linenos">13</span>    <span class="kd">private</span> <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
-<span class="linenos">14</span>        
-<span class="linenos">15</span>    <span class="p">}</span>
-<span class="linenos">16</span><span class="p">}</span>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">//  PythonMain.swift</span>
+<span class="c1">//</span>
+
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="kd">class</span> <span class="nc">PythonMain</span> <span class="p">{</span>
+    
+    <span class="kd">static</span> <span class="kd">let</span> <span class="nv">shared</span> <span class="p">=</span> <span class="n">PythonMain</span><span class="p">()</span>
+    
+<span class="hll">    <span class="kd">let</span> <span class="nv">hallo_world</span> <span class="p">=</span> <span class="n">HalloWorld</span><span class="p">()</span>
+</span>    
+    <span class="kd">private</span> <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
