@@ -2,7 +2,7 @@ from swift_types import *
 
 
 @wrapper
-class AppleApi:
+class HalloWorld:
 
     def hello_world(string: str):
         """
