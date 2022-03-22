@@ -22,8 +22,8 @@ PythonMain.swift
 Api:
 ******
 .. autoclass:: hallo_world.HalloWorld
-    :members:
-
+   :members:
+   :noindex:
 
 
 
