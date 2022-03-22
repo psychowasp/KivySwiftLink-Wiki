@@ -84,6 +84,7 @@ class CameraApi:
 
     def set_focus_point(self, x: float, y: float):
         """
+        
         """
 
     def zoom_camera(self, zoom: float):

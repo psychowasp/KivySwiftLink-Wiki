@@ -1,11 +1,13 @@
-CameraApi example
-=================
+CameraApi
+=========
 
 
 
 Wrapper file:
 *************
 .. code-block:: python
+
+    #camera_api.py
 
     from symtable import Class
     from swift_types import *

@@ -1,5 +1,5 @@
-HalloWorld example
-==================
+HalloWorld2
+===========
 
 Wrapper file:
 *************
