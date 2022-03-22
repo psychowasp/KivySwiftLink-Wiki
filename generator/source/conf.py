@@ -46,9 +46,9 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    'sphinx_copybutton'
-]
+    'sphinx_copybutton',
 
+]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -74,7 +74,8 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'one-dark'
+
 
 
 # -- Options for HTML output -------------------------------------------------
