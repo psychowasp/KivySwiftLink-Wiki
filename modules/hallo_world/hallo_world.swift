@@ -8,7 +8,7 @@ class HalloWorld {
 
 extension HalloWorld: HalloWorld_Delegate {
 
-    func hello_world(string: String) {
+    func send_string(string: String) {
         print(string)
     }
 
