@@ -7,6 +7,7 @@
   <title>HalloWorld example &mdash; KivySwiftLink 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -15,6 +16,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -109,23 +112,18 @@
 <div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">import</span> <span class="nc">Foundation</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="kd">class</span> <span class="nc">HalloWorld</span> <span class="p">{</span>
-<span class="linenos"> 4</span>    <span class="kd">var</span> <span class="nv">py</span><span class="p">:</span> <span class="n">HalloWorldPyCallback</span><span class="p">!</span>
-<span class="linenos"> 5</span>    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
-<span class="linenos"> 6</span>        <span class="n">InitHalloWorld_Delegate</span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
-<span class="linenos"> 7</span>    <span class="p">}</span>
-<span class="linenos"> 8</span><span class="p">}</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="kd">extension</span> <span class="nc">HalloWorld</span><span class="p">:</span> <span class="n">HalloWorld_Delegate</span> <span class="p">{</span>
-<span class="linenos">11</span>    <span class="kd">func</span> <span class="nf">set_HalloWorld_Callback</span><span class="p">(</span><span class="n">callback</span><span class="p">:</span> <span class="n">HalloWorldPyCallback</span><span class="p">,</span> <span class="n">cython_class</span><span class="p">:</span> <span class="n">CythonClass</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos">12</span>        <span class="n">py</span> <span class="p">=</span> <span class="n">callback</span>
+<span class="linenos"> 4</span>    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos"> 5</span>        <span class="n">InitHalloWorld_Delegate</span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="p">}</span>
+<span class="linenos"> 7</span><span class="p">}</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="kd">extension</span> <span class="nc">HalloWorld</span><span class="p">:</span> <span class="n">HalloWorld_Delegate</span> <span class="p">{</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="kd">func</span> <span class="nf">hello_world</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos">12</span>        <span class="bp">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 <span class="linenos">13</span>    <span class="p">}</span>
 <span class="linenos">14</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span>    <span class="kd">func</span> <span class="nf">hello_world</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos">17</span>        <span class="bp">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-<span class="linenos">18</span>    <span class="p">}</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="p">}</span>
+<span class="linenos">15</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
