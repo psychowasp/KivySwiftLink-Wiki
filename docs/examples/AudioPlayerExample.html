@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AudioPlayerExample &mdash; KivySwiftLink 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CameraApi" href="CameraApi.html" />
+    <link rel="prev" title="HalloWorld - Part 2" href="HalloWorld2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> KivySwiftLink
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="HalloWorld.html">HalloWorld - Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HalloWorld2.html">HalloWorld - Part 2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AudioPlayerExample</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wrapper-file">Wrapper file:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#swift">Swift:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#audioplayerexample-swift">AudioPlayerExample.swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main-py">Main.py</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api">Api:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CameraApi.html">CameraApi</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KivySwiftLink</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../examples.html">Examples</a> &raquo;</li>
+      <li>AudioPlayerExample</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/examples/AudioPlayerExample.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="audioplayerexample">
+<h1>AudioPlayerExample<a class="headerlink" href="#audioplayerexample" title="Permalink to this headline"></a></h1>
+<div class="section" id="wrapper-file">
+<h2>Wrapper file:<a class="headerlink" href="#wrapper-file" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gc</span> <span class="kn">import</span> <span class="n">callbacks</span>
+<span class="kn">from</span> <span class="nn">swift_types</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="nd">@wrapper</span>
+<span class="k">class</span> <span class="nc">AudioPlayerExample</span><span class="p">:</span>
+
+    <span class="k">class</span> <span class="nc">Callbacks</span><span class="p">:</span>
+        
+        <span class="k">def</span> <span class="nf">player_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mins</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">secs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">progress_text</span><span class="p">:</span> <span class="nb">str</span> <span class="p">,</span> <span class="n">progress</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="s2">&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">playing_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="s2">&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">set_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="s2">&quot;&quot;</span>
+        
+    
+    <span class="c1">#call set_duration when song is loaded</span>
+    <span class="k">def</span> <span class="nf">new_song_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filePath</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span> <span class="o">...</span>
+    
+    <span class="c1">#call set_duration when song is loaded</span>
+    <span class="k">def</span> <span class="nf">new_song_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">):</span> <span class="o">...</span>
+    
+    <span class="k">def</span> <span class="nf">new_playlist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span> <span class="o">...</span>
+    
+    <span class="k">def</span> <span class="nf">add2playlist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filePath</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span> <span class="o">...</span>
+    
+    <span class="k">def</span> <span class="nf">play_pause</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span>
+    
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span>
+    
+    <span class="k">def</span> <span class="nf">prev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span>
+    
+    <span class="k">def</span> <span class="nf">jump_to_track</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="o">...</span>
+    
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">rate_adjustment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">adjuster</span><span class="p">:</span> <span class="n">float32</span><span class="p">):</span> <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">rate_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="swift">
+<h2>Swift:<a class="headerlink" href="#swift" title="Permalink to this headline"></a></h2>
+<div class="section" id="audioplayerexample-swift">
+<h3>AudioPlayerExample.swift<a class="headerlink" href="#audioplayerexample-swift" title="Permalink to this headline"></a></h3>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Foundation</span>
+<span class="kd">import</span> <span class="nc">AVFoundation</span>
+
+<span class="kd">protocol</span> <span class="nc">PlayerInfoDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">nextFrame</span><span class="p">()</span>
+    <span class="kd">func</span> <span class="nf">songFinished</span><span class="p">(</span><span class="kc">_</span> <span class="n">player</span><span class="p">:</span> <span class="n">AVAudioPlayer</span><span class="p">,</span> <span class="n">successfully</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">Bool</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//custom class to automatic update currentTime in the AVAudioPlayer and when a song ended</span>
+<span class="kd">class</span> <span class="nc">PlayerInfoHandler</span><span class="p">:</span> <span class="bp">NSObject</span><span class="p">,</span> <span class="n">AVAudioPlayerDelegate</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="n">PlayerInfoDelegate</span><span class="p">!</span>
+    
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">_enabled</span> <span class="p">=</span> <span class="kc">false</span>
+    <span class="kd">var</span> <span class="nv">link</span><span class="p">:</span> <span class="bp">CADisplayLink</span><span class="p">!</span>
+    
+    <span class="kr">override</span> <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">()</span>
+        <span class="n">link</span> <span class="p">=</span> <span class="bp">CADisplayLink</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="kc">self</span><span class="p">,</span> <span class="n">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">update</span><span class="p">))</span>
+    <span class="p">}</span>
+    
+    <span class="kd">var</span> <span class="nv">fps</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">{</span>
+        <span class="kr">get</span> <span class="p">{</span> <span class="n">link</span><span class="p">.</span><span class="n">preferredFramesPerSecond</span> <span class="p">}</span>
+        <span class="kr">set</span> <span class="p">{</span> <span class="n">link</span><span class="p">.</span><span class="n">preferredFramesPerSecond</span> <span class="p">=</span> <span class="n">newValue</span> <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">var</span> <span class="nv">enabled</span><span class="p">:</span> <span class="nb">Bool</span> <span class="p">{</span>
+        <span class="kr">get</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">_enabled</span>
+        <span class="p">}</span>
+        <span class="kr">set</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">newValue</span> <span class="p">{</span>
+                <span class="n">link</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="p">.</span><span class="n">current</span><span class="p">,</span> <span class="n">forMode</span><span class="p">:</span> <span class="p">.</span><span class="n">common</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">link</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="p">.</span><span class="n">current</span><span class="p">,</span> <span class="n">forMode</span><span class="p">:</span> <span class="p">.</span><span class="n">common</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">_enabled</span> <span class="p">=</span> <span class="n">newValue</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kr">@objc</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">displaylink</span><span class="p">:</span> <span class="bp">CADisplayLink</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">delegate</span> <span class="p">=</span> <span class="n">delegate</span> <span class="k">else</span> <span class="p">{</span><span class="k">return</span><span class="p">}</span>
+        <span class="n">delegate</span><span class="p">.</span><span class="n">nextFrame</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">audioPlayerDidFinishPlaying</span><span class="p">(</span><span class="kc">_</span> <span class="n">player</span><span class="p">:</span> <span class="n">AVAudioPlayer</span><span class="p">,</span> <span class="n">successfully</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">delegate</span> <span class="p">=</span> <span class="n">delegate</span> <span class="k">else</span> <span class="p">{</span><span class="k">return</span><span class="p">}</span>
+        <span class="n">delegate</span><span class="p">.</span><span class="n">songFinished</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">successfully</span><span class="p">:</span> <span class="n">flag</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kd">class</span> <span class="nc">AudioPlayerExample</span> <span class="p">{</span>
+    
+    <span class="kd">private</span> <span class="kd">let</span> <span class="nv">playerinfo_handler</span><span class="p">:</span> <span class="n">PlayerInfoHandler</span><span class="p">!</span>
+    
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">_audioplayer</span><span class="p">:</span> <span class="n">AVAudioPlayer</span><span class="p">!</span>
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">nextSong</span><span class="p">:</span> <span class="n">AVAudioPlayer</span><span class="p">!</span>
+    <span class="kd">private</span> <span class="kd">let</span> <span class="nv">session</span> <span class="p">=</span> <span class="bp">AVAudioSession</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">()</span>
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">py</span><span class="p">:</span> <span class="n">AudioPlayerExamplePyCallback</span><span class="p">!</span>
+    
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">current_playlist</span><span class="p">:</span> <span class="p">[</span><span class="n">URL</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span>
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">song_count</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">playlist_size</span> <span class="p">=</span> <span class="mi">0</span>
+    
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">playlist_running</span> <span class="p">=</span> <span class="kc">false</span>
+    
+    <span class="cm">/* assign a new track with this property, it will automatic set the</span>
+<span class="cm">     AVAudioPlayerDelegate delegate for the PlayerInfo_Handler class</span>
+<span class="cm">    */</span>
+    <span class="kd">var</span> <span class="nv">current_track</span><span class="p">:</span> <span class="n">AVAudioPlayer</span><span class="p">!</span> <span class="p">{</span>
+        <span class="kr">get</span> <span class="p">{</span> <span class="n">_audioplayer</span> <span class="p">}</span>
+        <span class="kr">set</span> <span class="p">{</span>
+            <span class="n">_audioplayer</span> <span class="p">=</span> <span class="n">newValue</span>
+            <span class="n">newValue</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="n">playerinfo_handler</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">playerinfo_handler</span> <span class="p">=</span> <span class="n">PlayerInfoHandler</span><span class="p">()</span>
+        <span class="n">playerinfo_handler</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+        <span class="c1">//set playerinfo refresh rate (fps)</span>
+        <span class="n">playerinfo_handler</span><span class="p">.</span><span class="n">fps</span> <span class="p">=</span> <span class="mi">2</span>
+        
+        <span class="n">InitAudioPlayerExample_Delegate</span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">var</span> <span class="nv">isPlaying</span><span class="p">:</span> <span class="nb">Bool</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">player</span> <span class="p">=</span> <span class="n">current_track</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span> <span class="p">}</span>
+        <span class="k">return</span> <span class="n">player</span><span class="p">.</span><span class="n">isPlaying</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">startPlaylist</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">first_song</span> <span class="p">=</span> <span class="n">current_playlist</span><span class="p">.</span><span class="bp">first</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="kd">let</span> <span class="nv">player</span> <span class="p">=</span> <span class="k">try</span><span class="p">!</span> <span class="n">AVAudioPlayer</span><span class="p">(</span><span class="n">contentsOf</span><span class="p">:</span> <span class="n">first_song</span><span class="p">)</span>
+        <span class="n">current_track</span> <span class="p">=</span> <span class="n">player</span>
+        <span class="c1">//guard let player = audioplayer else { return } //returns if player not set</span>
+        <span class="n">player</span><span class="p">.</span><span class="n">prepareToPlay</span><span class="p">()</span>
+        <span class="n">player</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="n">py</span><span class="p">.</span><span class="n">playing_status</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">playerinfo_handler</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="n">playlist_running</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="n">song_count</span> <span class="p">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">playlist_size</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">prepareNextSong</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">resume</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">track</span> <span class="p">=</span> <span class="n">current_track</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1">//returns if player not set</span>
+        <span class="n">track</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="n">py</span><span class="p">.</span><span class="n">playing_status</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">playerinfo_handler</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">true</span>
+        
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">pause</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">track</span> <span class="p">=</span> <span class="n">current_track</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1">//returns if player not set</span>
+        <span class="n">track</span><span class="p">.</span><span class="n">pause</span><span class="p">()</span>
+        <span class="n">playerinfo_handler</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">false</span>
+        <span class="n">py</span><span class="p">.</span><span class="n">playing_status</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    
+    <span class="kd">func</span> <span class="nf">prepareNextSong</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">nextURL</span> <span class="p">=</span> <span class="n">current_playlist</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">DispatchQueue</span><span class="p">.</span><span class="n">global</span><span class="p">().</span><span class="n">asyncAfter</span><span class="p">(</span><span class="n">deadline</span><span class="p">:</span> <span class="p">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="kd">let</span> <span class="nv">next</span> <span class="p">=</span> <span class="k">try</span><span class="p">!</span> <span class="n">AVAudioPlayer</span><span class="p">(</span><span class="n">contentsOf</span><span class="p">:</span> <span class="n">nextURL</span><span class="p">)</span>
+            <span class="n">next</span><span class="p">.</span><span class="n">prepareToPlay</span><span class="p">()</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">nextSong</span> <span class="p">=</span> <span class="n">next</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">playNextSong</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">current_track</span> <span class="p">=</span> <span class="n">nextSong</span>
+        <span class="n">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">jump2Track</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">next</span> <span class="p">=</span> <span class="n">current_playlist</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="kd">let</span> <span class="nv">player</span> <span class="p">=</span> <span class="k">try</span><span class="p">!</span> <span class="n">AVAudioPlayer</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">contentsOf</span><span class="p">:</span> <span class="n">next</span><span class="p">)</span>
+        <span class="n">player</span><span class="p">.</span><span class="n">prepareToPlay</span><span class="p">()</span>
+        <span class="n">song_count</span> <span class="p">=</span> <span class="n">index</span>
+        <span class="n">current_track</span> <span class="p">=</span> <span class="n">player</span>
+        <span class="n">player</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">playlist_size</span> <span class="p">{</span>
+            <span class="n">prepareNextSong</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//PlayerInfo Callback extension</span>
+<span class="kd">extension</span> <span class="nc">AudioPlayerExample</span><span class="p">:</span> <span class="n">PlayerInfoDelegate</span> <span class="p">{</span>
+ 
+    <span class="kd">func</span> <span class="nf">nextFrame</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">track</span> <span class="p">=</span> <span class="n">current_track</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="kd">let</span> <span class="nv">time</span> <span class="p">=</span> <span class="n">track</span><span class="p">.</span><span class="n">currentTime</span>
+        <span class="kd">let</span> <span class="nv">dur</span> <span class="p">=</span> <span class="n">track</span><span class="p">.</span><span class="n">duration</span>
+        <span class="kd">let</span> <span class="nv">progress</span> <span class="p">=</span> <span class="n">time</span> <span class="o">/</span> <span class="n">dur</span>
+        <span class="kd">let</span> <span class="nv">_time</span> <span class="p">=</span> <span class="nb">Int</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">mins</span> <span class="p">=</span> <span class="n">_time</span> <span class="o">/</span> <span class="mi">60</span>
+        <span class="kd">let</span> <span class="nv">secs</span> <span class="p">=</span> <span class="n">_time</span> <span class="o">%</span> <span class="mi">60</span>
+        <span class="kd">let</span> <span class="nv">_dur</span> <span class="p">=</span> <span class="nb">Int</span><span class="p">(</span><span class="n">dur</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">p_text</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="n">format</span><span class="p">:</span> <span class="s">&quot;%02d:%02d/%02d:%02d&quot;</span><span class="p">,</span> <span class="n">mins</span><span class="p">,</span> <span class="n">secs</span><span class="p">,</span> <span class="n">_dur</span> <span class="o">/</span> <span class="mi">60</span><span class="p">,</span> <span class="n">_dur</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+        
+        <span class="n">py</span><span class="p">.</span><span class="n">player_info</span><span class="p">(</span><span class="n">mins</span><span class="p">:</span> <span class="n">mins</span><span class="p">,</span> <span class="n">secs</span><span class="p">:</span> <span class="n">secs</span><span class="p">,</span> <span class="n">progress_text</span><span class="p">:</span> <span class="n">p_text</span><span class="p">,</span> <span class="n">progress</span><span class="p">:</span> <span class="n">progress</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">songFinished</span><span class="p">(</span><span class="kc">_</span> <span class="n">player</span><span class="p">:</span> <span class="n">AVAudioPlayer</span><span class="p">,</span> <span class="n">successfully</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">song_count</span> <span class="o">&lt;</span> <span class="n">playlist_size</span> <span class="p">{</span>
+            <span class="n">playNextSong</span><span class="p">()</span>
+            <span class="n">prepareNextSong</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">song_count</span><span class="p">)</span>
+            <span class="n">song_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+        <span class="n">py</span><span class="p">.</span><span class="n">playing_status</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">playerinfo_handler</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">false</span>
+        <span class="n">playlist_running</span> <span class="p">=</span> <span class="kc">false</span>
+        <span class="n">song_count</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+
+<span class="c1">//Python Extension</span>
+<span class="kd">extension</span> <span class="nc">AudioPlayerExample</span><span class="p">:</span> <span class="n">AudioPlayerExample_Delegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">set_AudioPlayerExample_Callback</span><span class="p">(</span><span class="n">callback</span><span class="p">:</span> <span class="n">AudioPlayerExamplePyCallback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">py</span> <span class="p">=</span> <span class="n">callback</span>
+    <span class="p">}</span>
+    
+    
+    <span class="kd">func</span> <span class="nf">play_pause</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">isPlaying</span> <span class="p">{</span>
+            <span class="n">pause</span><span class="p">()</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">playlist_running</span> <span class="p">{</span>
+                <span class="n">resume</span><span class="p">()</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">startPlaylist</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">count</span> <span class="p">=</span> <span class="n">song_count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">count</span> <span class="o">&lt;=</span> <span class="n">playlist_size</span> <span class="p">{</span>
+            <span class="n">jump2Track</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="bp">count</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">prev</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">count</span> <span class="p">=</span> <span class="n">song_count</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">count</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">jump2Track</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="bp">count</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">jump_to_track</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">song_count</span> <span class="p">{</span>
+            <span class="n">jump2Track</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">stop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">track</span> <span class="p">=</span> <span class="n">current_track</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1">//returns if player not set</span>
+        <span class="n">track</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="n">playerinfo_handler</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">false</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">rate_adjustment</span><span class="p">(</span><span class="n">adjuster</span><span class="p">:</span> <span class="nb">Float</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">track</span> <span class="p">=</span> <span class="n">current_track</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="n">track</span><span class="p">.</span><span class="n">rate</span> <span class="o">+=</span> <span class="n">adjuster</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;changing rate </span><span class="si">\(</span><span class="n">track</span><span class="p">.</span><span class="n">rate</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">rate_reset</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">track</span> <span class="p">=</span> <span class="n">current_track</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="n">track</span><span class="p">.</span><span class="n">rate</span> <span class="p">=</span> <span class="mf">1.0</span>
+    <span class="p">}</span>
+    
+    
+    
+    
+    
+    <span class="kd">func</span> <span class="nf">new_song_url</span><span class="p">(</span><span class="n">filePath</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="n">current_track</span> <span class="p">=</span> <span class="k">try</span> <span class="n">AVAudioPlayer</span><span class="p">(</span><span class="n">contentsOf</span><span class="p">:</span> <span class="n">URL</span><span class="p">(</span><span class="n">fileURLWithPath</span><span class="p">:</span> <span class="n">filePath</span><span class="p">))</span>
+        <span class="p">}</span>
+        
+        <span class="k">catch</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">new_song_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="n">current_track</span> <span class="p">=</span> <span class="k">try</span> <span class="n">AVAudioPlayer</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">current_track</span><span class="p">.</span><span class="n">enableRate</span> <span class="p">=</span> <span class="kc">true</span>
+            <span class="n">py</span><span class="p">.</span><span class="n">set_duration</span><span class="p">(</span><span class="n">duration</span><span class="p">:</span> <span class="n">current_track</span><span class="p">.</span><span class="n">duration</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">catch</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    
+    <span class="kd">func</span> <span class="nf">new_playlist</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">current_playlist</span> <span class="p">=</span> <span class="n">files</span><span class="p">.</span><span class="bp">map</span><span class="p">{</span> <span class="n">f</span> <span class="k">in</span> <span class="n">URL</span><span class="p">(</span><span class="n">fileURLWithPath</span><span class="p">:</span> <span class="n">f</span><span class="p">)</span> <span class="p">}</span>
+        <span class="n">playlist_size</span> <span class="p">=</span> <span class="n">files</span><span class="p">.</span><span class="bp">count</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="bp">print</span><span class="p">(</span><span class="n">current_playlist</span><span class="p">)</span>
+        <span class="n">startPlaylist</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">add2playlist</span><span class="p">(</span><span class="n">filePath</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">current_playlist</span><span class="p">.</span><span class="n">append</span><span class="p">(</span> <span class="n">URL</span><span class="p">(</span><span class="n">fileURLWithPath</span><span class="p">:</span> <span class="n">filePath</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">playlist_size</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="main-py">
+<h3>Main.py<a class="headerlink" href="#main-py" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">kivy</span>
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.boxlayout</span> <span class="kn">import</span> <span class="n">BoxLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.relativelayout</span> <span class="kn">import</span> <span class="n">RelativeLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="kn">import</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">BooleanProperty</span><span class="p">,</span><span class="n">ObjectProperty</span><span class="p">,</span><span class="n">StringProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="kn">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.slider</span> <span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.dropdown</span> <span class="kn">import</span> <span class="n">DropDown</span>
+<span class="kn">from</span> <span class="nn">kivy.lang.builder</span> <span class="kn">import</span> <span class="n">Builder</span>
+
+
+<span class="kn">from</span> <span class="nn">av_media_player</span> <span class="kn">import</span> <span class="n">AVPlayerApi</span>
+
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getcwd</span><span class="p">,</span> <span class="n">listdir</span>
+            
+            
+<span class="k">class</span> <span class="nc">MediaPlayerWindow</span><span class="p">(</span><span class="n">RelativeLayout</span><span class="p">,</span> <span class="n">AVPlayerApi</span><span class="p">):</span>
+    <span class="c1">#duration = NumericProperty(0)</span>
+    <span class="n">current_time</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">current_process</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">time_text</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    
+    <span class="n">time_slider</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1">#self.play_list = PlayList(width=800)</span>
+        
+        <span class="nb">super</span><span class="p">(</span><span class="n">MediaPlayerWindow</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">callback_class</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">player_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mins</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">secs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">progress_text</span><span class="p">:</span> <span class="nb">str</span> <span class="p">,</span> <span class="n">progress</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_text</span> <span class="o">=</span> <span class="n">progress_text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_process</span> <span class="o">=</span> <span class="n">progress</span>
+
+    <span class="k">def</span> <span class="nf">set_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span>
+
+    <span class="k">def</span> <span class="nf">playing_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="o">...</span>
+        <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="o">...</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="o">...</span>
+
+
+
+
+
+<span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">  </span>
+<span class="s2">&lt;MediaPlayerWindow&gt;:</span>
+
+<span class="s2">    Button:</span>
+<span class="s2">        id: show_playlist</span>
+<span class="s2">        text: &quot;new playlist&quot;</span>
+<span class="s2">        pos_hint: {&#39;right&#39;: 1, &#39;top&#39;: 1}</span>
+<span class="s2">        size_hint: 0.15,0.15</span>
+<span class="s2">        on_release: root.new_playlist(app.playlist)</span>
+<span class="s2">    Button:</span>
+<span class="s2">        id: play</span>
+<span class="s2">        text: &quot;Play&quot;</span>
+<span class="s2">        pos_hint: {&#39;center_x&#39;: 0.5, &#39;center_y&#39;: 0.5}</span>
+<span class="s2">        size_hint: 0.15,0.15</span>
+<span class="s2">        on_release: root.play_pause()</span>
+<span class="s2">    Button:</span>
+<span class="s2">        id: prev</span>
+<span class="s2">        text: &quot;Prev&quot;</span>
+<span class="s2">        pos_hint: {&#39;center_x&#39;: 0.25, &#39;center_y&#39;: 0.5}</span>
+<span class="s2">        size_hint: 0.15,0.15</span>
+<span class="s2">        on_release: root.prev()</span>
+<span class="s2">    Button:</span>
+<span class="s2">        id: next</span>
+<span class="s2">        text: &quot;Next&quot;</span>
+<span class="s2">        pos_hint: {&#39;center_x&#39;: 0.75, &#39;center_y&#39;: 0.5}</span>
+<span class="s2">        size_hint: 0.15,0.15</span>
+<span class="s2">        on_release: root.next()</span>
+<span class="s2">    BoxLayout:</span>
+<span class="s2">        orientation: &quot;vertical&quot;</span>
+<span class="s2">        pos_hint: {&#39;center_x&#39;: 0.5, &#39;y&#39;: 0.0}</span>
+<span class="s2">        size_hint: 0.8,0.2</span>
+<span class="s2">        Label:</span>
+<span class="s2">            text: root.time_text</span>
+<span class="s2">            font_size: 48</span>
+<span class="s2">        Slider:</span>
+<span class="s2">            id: time</span>
+<span class="s2">            min: 0.0</span>
+<span class="s2">            max: 1.0</span>
+<span class="s2">            value: root.current_process</span>
+<span class="s2">            </span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MediaSwift</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">playlist</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;songs/Funk Test 3 - Mix.mp3&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;songs/Sommer - test 1.m4a&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;songs/Blå som himmelen - Chorus Test 3.mp3&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;songs/Klig_Kys_-_Export_2.mp3&quot;</span>
+        <span class="p">]</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MediaSwift</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">mp_window</span> <span class="o">=</span> <span class="n">MediaPlayerWindow</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mp_window</span>
+    
+        
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">MediaSwift</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="api">
+<h2>Api:<a class="headerlink" href="#api" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">audio_player.</span></span><span class="sig-name descname"><span class="pre">AudioPlayerExample</span></span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.add2playlist">
+<span class="sig-name descname"><span class="pre">add2playlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.String_Bytes.str" title="swift_types.String_Bytes.str"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.add2playlist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.add2playlist" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.jump_to_track">
+<span class="sig-name descname"><span class="pre">jump_to_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.SignedIntegers.int" title="swift_types.SignedIntegers.int"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.jump_to_track"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.jump_to_track" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.new_playlist">
+<span class="sig-name descname"><span class="pre">new_playlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.Sequences.list" title="swift_types.Sequences.list"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documentation.html#swift_types.String_Bytes.str" title="swift_types.String_Bytes.str"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.new_playlist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.new_playlist" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.new_song_bytes">
+<span class="sig-name descname"><span class="pre">new_song_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.new_song_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.new_song_bytes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.new_song_url">
+<span class="sig-name descname"><span class="pre">new_song_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.String_Bytes.str" title="swift_types.String_Bytes.str"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.new_song_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.new_song_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.next"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.next" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.play_pause">
+<span class="sig-name descname"><span class="pre">play_pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.play_pause"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.play_pause" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.prev">
+<span class="sig-name descname"><span class="pre">prev</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.prev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.prev" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.rate_adjustment">
+<span class="sig-name descname"><span class="pre">rate_adjustment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adjuster</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.rate_adjustment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.rate_adjustment" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.rate_reset">
+<span class="sig-name descname"><span class="pre">rate_reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.rate_reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.rate_reset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/audio_player.html#AudioPlayerExample.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#audio_player.AudioPlayerExample.stop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.Callbacks">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">audio_player.AudioPlayerExample.</span></span><span class="sig-name descname"><span class="pre">Callbacks</span></span><a class="headerlink" href="#audio_player.AudioPlayerExample.Callbacks" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.Callbacks.player_info">
+<span class="sig-name descname"><span class="pre">player_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.SignedIntegers.int" title="swift_types.SignedIntegers.int"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">secs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.SignedIntegers.int" title="swift_types.SignedIntegers.int"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.String_Bytes.str" title="swift_types.String_Bytes.str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#audio_player.AudioPlayerExample.Callbacks.player_info" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.Callbacks.playing_status">
+<span class="sig-name descname"><span class="pre">playing_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.SignedIntegers.int" title="swift_types.SignedIntegers.int"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#audio_player.AudioPlayerExample.Callbacks.playing_status" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_player.AudioPlayerExample.Callbacks.set_duration">
+<span class="sig-name descname"><span class="pre">set_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#audio_player.AudioPlayerExample.Callbacks.set_duration" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="HalloWorld2.html" class="btn btn-neutral float-left" title="HalloWorld - Part 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CameraApi.html" class="btn btn-neutral float-right" title="CameraApi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

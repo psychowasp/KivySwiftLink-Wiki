@@ -3,7 +3,7 @@ HalloWorld - Part 2
 
 Wrapper file:
 *************
-.. literalinclude:: ../../../modules/hallo_world2/hallo_world.py
+.. literalinclude:: ../../../examples/hallo_world2/hallo_world.py
    :language: python
    :emphasize-lines: 7-11
 
@@ -11,7 +11,7 @@ Swift:
 ******
 hallo_world.swift
 ^^^^^^^^^^^^^^^^^
-.. literalinclude:: ../../../modules/hallo_world2/hallo_world.swift
+.. literalinclude:: ../../../examples/hallo_world2/hallo_world.swift
    :language: swift
    :emphasize-lines: 7-11
 

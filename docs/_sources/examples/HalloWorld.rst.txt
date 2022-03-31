@@ -12,7 +12,7 @@ esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
 est laborum.
 
-.. literalinclude:: ../../../modules/hallo_world/hallo_world.py
+.. literalinclude:: ../../../examples/hallo_world/hallo_world.py
    :language: python
 
 Swift:
@@ -28,7 +28,7 @@ est laborum.
 
 hallo_world.swift
 ^^^^^^^^^^^^^^^^^
-.. literalinclude:: ../../../modules/hallo_world/hallo_world.swift
+.. literalinclude:: ../../../examples/hallo_world/hallo_world.swift
    :language: swift
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -41,7 +41,7 @@ est laborum.
 
 PythonMain.swift
 ^^^^^^^^^^^^^^^^
-.. literalinclude:: ../../../modules/hallo_world/PythonMain.swift
+.. literalinclude:: ../../../examples/hallo_world/PythonMain.swift
    :language: swift
    :emphasize-lines: 11
 

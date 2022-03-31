@@ -44,7 +44,9 @@ from builtins import *
 
 __all__ = [
     "callback",
-    "int"
+    "int",
+    "float32",
+    "data"
 ] 
 
 class SignedIntegers:
@@ -222,7 +224,10 @@ int32 = SignedIntegers.int32
 int16 = SignedIntegers.int16
 int8 = SignedIntegers.int8
 
+class data:
+    ...
 
+float32 = float
 # def EventDispatcher(_(): list[str])(): ...
 
 # def callback(direct(): bool)(): ...

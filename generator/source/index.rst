@@ -11,7 +11,7 @@ Welcome to ``KivySwiftLink``'s documentation!
    :caption: Content
 
    documentation
-   modules
+   examples
 
 
 Indices and tables

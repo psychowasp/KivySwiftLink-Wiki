@@ -8,4 +8,8 @@ Examples
 
    examples/HalloWorld2
 
+   examples/AudioPlayerExample
+
    examples/CameraApi
+
+   
