@@ -44,8 +44,14 @@ iOS Academy - Swift for Beginners (2022)
 
 |
 
+
+|
+
+Advanced Swift
+^^^^^^^^^^^^^^
+
 Codable:
-^^^^^^^^
+********
 
 .. raw:: html
 
@@ -56,9 +62,6 @@ Codable:
     <iframe width="560" height="315" src="https://www.youtube.com/embed/w7xJrAYQoHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 |
-
-Advanced Swift
-^^^^^^^^^^^^^^
 
 Swift Algorithms
 ****************
