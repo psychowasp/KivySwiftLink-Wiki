@@ -11,6 +11,7 @@ Welcome to ``KivySwiftLink``'s documentation!
    :caption: Content
 
    documentation
+   learn_swift
    examples
 
 
