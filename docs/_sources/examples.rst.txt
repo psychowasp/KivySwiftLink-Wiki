@@ -8,6 +8,8 @@ Examples
 
    examples/HalloWorld2
 
+   examples/ToastSwift
+
    examples/AudioPlayerExample
 
    examples/CameraApi
