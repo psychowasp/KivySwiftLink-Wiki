@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Making your first wrapper: &mdash; KivySwiftLink 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="HalloWorld - Part 2" href="HelloWorld2.html" />
+    <link rel="prev" title="Getting Started:" href="../getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> KivySwiftLink
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../getting_started.html">Getting Started:</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Making your first wrapper:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#part-1">Part 1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#swift">Swift:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pythonmain-swift">PythonMain.swift</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#part-2">Part 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HelloWorld2.html">HalloWorld - Part 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learn_swift.html">Learn Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KivySwiftLink</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../getting_started.html">Getting Started:</a> &raquo;</li>
+      <li>Making your first wrapper:</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/examples/HelloWorld.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="making-your-first-wrapper">
+<h1>Making your first wrapper:<a class="headerlink" href="#making-your-first-wrapper" title="Permalink to this headline"></a></h1>
+<div class="section" id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline"></a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&lt;working_folder&gt;/&lt;your_project&gt;/wrapper_sources
+</pre></div>
+</div>
+<p>called</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>hello_world.py
+</pre></div>
+</div>
+<p>and paste the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#hello_world.py</span>
+<span class="kn">from</span> <span class="nn">swift_types</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="nd">@wrapper</span>
+<span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">send_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span> <span class="o">...</span>
+        
+</pre></div>
+</div>
+<div class="section" id="swift">
+<h3>Swift:<a class="headerlink" href="#swift" title="Permalink to this headline"></a></h3>
+<p>Open the Xcode project. (my_project-ios)</p>
+<img alt="../_images/xcode_select_sources.png" src="../_images/xcode_select_sources.png" />
+<p>Click on File -&gt; New -&gt; File</p>
+<img alt="../_images/xcode_select_new_file.png" src="../_images/xcode_select_new_file.png" />
+<p>and write the name “HelloWorld.swift</p>
+<img alt="../_images/xcode_select_swift_file.png" src="../_images/xcode_select_swift_file.png" />
+<div class="section" id="helloworld-swift">
+<h4>HelloWorld.swift<a class="headerlink" href="#helloworld-swift" title="Permalink to this headline"></a></h4>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="c1">//HelloWorld.swift</span>
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+
+    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="nc">HelloWorld</span><span class="p">:</span> <span class="n">HelloWorld_Delegate</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You will now be met by the following warning</p>
+<img alt="../_images/xcode_protocol_missing.png" src="../_images/xcode_protocol_missing.png" />
+<p>Click on the red box to get the following option</p>
+<img alt="../_images/xcode_protocol_fix.png" src="../_images/xcode_protocol_fix.png" />
+<p>Xcode will now inject the missing protocol functions (the ones you defined in the hello_world.py wrapper file.)</p>
+<img alt="../_images/xcode_protocol_result.png" src="../_images/xcode_protocol_result.png" />
+<p>replace <em>code</em> with the following string:</p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="bp">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and you should end up with the this result</p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="c1">//HelloWorld.swift</span>
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+    
+    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="nc">HelloWorld</span><span class="p">:</span> <span class="n">HelloWorld_Delegate</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">send_string</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here comes the most important of all, because just creating a swift class with the same name won’t do much magic.</p>
+<p>You might also wonder what is this <cite>HelloWorld_Delegate</cite>, other than it mimics the same function layout as you wrote in the hello_world.py.</p>
+<p>Protocols are used to create links between different classes, or in our case to connect the generated code in “hello_world.swift” ( look in SwiftWrappers group ).</p>
+<p>So for each wrapper file, KivySwiftLink will create a protocol with the same name layout &lt;WrapperClassName&gt;_Delegate.
+In this case, it will be HelloWorld_Delegate.</p>
+<p>So how do we set the protocol/delegate target then?
+Well, simple, KSL also generates a function for that need and will have the following name layout</p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="n">Init</span><span class="p">&lt;</span><span class="n">WrapperClassName</span><span class="p">&gt;</span><span class="n">_Delegate</span>
+</pre></div>
+</div>
+<p>and accepts the following arguement</p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="p">&lt;</span><span class="n">WrapperClassName</span><span class="p">&gt;</span><span class="n">_Delegate</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>so in HelloWorld’s case:</p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="n">InitHelloWorld_Delegate</span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="n">HelloWorld_Delegate</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s insert <code class="docutils literal notranslate"><span class="pre">InitHelloWorld_Delegate</span></code> in the <code class="docutils literal notranslate"><span class="pre">init</span></code> in HelloWorld swift class,
+but use <code class="docutils literal notranslate"><span class="pre">self</span></code> as the delegate parameter since <code class="docutils literal notranslate"><span class="pre">self</span></code> conforms to <code class="docutils literal notranslate"><span class="pre">HelloWorld_delegate</span></code></p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="c1">//HelloWorld.swift</span>
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+    
+    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="n">InitHelloWorld_Delegate</span><span class="p">(</span><span class="n">delegate</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="nc">HelloWorld</span><span class="p">:</span> <span class="n">HelloWorld_Delegate</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">send_string</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now for the final step on the swift-side.</p>
+</div>
+</div>
+<div class="section" id="pythonmain-swift">
+<h3>PythonMain.swift<a class="headerlink" href="#pythonmain-swift" title="Permalink to this headline"></a></h3>
+<p>goto <cite>PythonMain.swift</cite></p>
+<p><cite>PythonMain</cite> is the main class, where all your Swift classes needs to inited from.</p>
+<p>see it as the main root, since this Class will be inited as the first thing when app launches.
+Once this class is done initing all the classes that have been added to it, then the Kivy main app will start running.</p>
+<p>Add the following line to PythonMain class</p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">hello_world</span> <span class="p">=</span> <span class="n">HelloWorld</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">//  PythonMain.swift</span>
+<span class="c1">//</span>
+
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="kd">class</span> <span class="nc">PythonMain</span> <span class="p">{</span>
+    
+    <span class="kd">static</span> <span class="kd">let</span> <span class="nv">shared</span> <span class="p">=</span> <span class="n">PythonMain</span><span class="p">()</span>
+    
+<span class="hll">    <span class="kd">let</span> <span class="nv">hello_world</span> <span class="p">=</span> <span class="n">HelloWorld</span><span class="p">()</span>
+</span>    
+    <span class="kd">private</span> <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="hello_world.HelloWorld">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hello_world.</span></span><span class="sig-name descname"><span class="pre">HelloWorld</span></span><a class="reference internal" href="../_modules/hello_world.html#HelloWorld"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hello_world.HelloWorld" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="hello_world.HelloWorld.send_string">
+<span class="sig-name descname"><span class="pre">send_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.String_Bytes.str" title="swift_types.String_Bytes.str"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hello_world.html#HelloWorld.send_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hello_world.HelloWorld.send_string" title="Permalink to this definition"></a></dt>
+<dd><p>Send a str to swift.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hello_world.</span></span><span class="sig-name descname"><span class="pre">HelloWorld</span></span><a class="reference internal" href="../_modules/hello_world.html#HelloWorld"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">send_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.String_Bytes.str" title="swift_types.String_Bytes.str"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hello_world.html#HelloWorld.send_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Send a str to swift.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="hello_world.HelloWorld.Callbacks">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hello_world.HelloWorld.</span></span><span class="sig-name descname"><span class="pre">Callbacks</span></span><a class="headerlink" href="#hello_world.HelloWorld.Callbacks" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="hello_world.HelloWorld.Callbacks.get_string">
+<span class="sig-name descname"><span class="pre">get_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../documentation.html#swift_types.String_Bytes.str" title="swift_types.String_Bytes.str"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hello_world.HelloWorld.Callbacks.get_string" title="Permalink to this definition"></a></dt>
+<dd><p>Get a string from swift</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../getting_started.html" class="btn btn-neutral float-left" title="Getting Started:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="HelloWorld2.html" class="btn btn-neutral float-right" title="HalloWorld - Part 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

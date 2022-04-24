@@ -1,22 +1,37 @@
-HalloWorld - Part 1
-===================
+==========================
+Making your first wrapper:
+==========================
 
-Wrapper file:
-*************
+Part 1
+======
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-est laborum.
+
+.. code-block:: sh
+
+   <working_folder>/<your_project>/wrapper_sources
+
+called
+
+.. code-block:: sh
+
+   hallo_world.py
+
+and paste the following:
 
 .. literalinclude:: ../../../examples/hallo_world/hallo_world.py
    :language: python
 
 Swift:
-******
+^^^^^^
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+est laborum.
+
+.. image:: ../../../examples/hallo_world/images/xcode_select_sources.png
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -26,8 +41,13 @@ esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
 est laborum.
 
+.. image:: ../../../examples/hallo_world/images/xcode_select_new_file.png
+
+.. image:: ../../../examples/hallo_world/images/xcode_select_swift_file.png
+
+
 hallo_world.swift
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 .. literalinclude:: ../../../examples/hallo_world/hallo_world.swift
    :language: swift
 
@@ -38,6 +58,62 @@ commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
 esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
 est laborum.
+
+You will now be met by the following warning.
+
+.. image:: ../../../examples/hallo_world/images/xcode_protocol_missing.png
+
+Click on the red box to get the following option:
+
+.. image:: ../../../examples/hallo_world/images/xcode_protocol_fix.png
+
+Xcode will now inject the missing protocol functions (the ones you defined in the hallo_world.py wrapper file.)
+
+.. image:: ../../../examples/hallo_world/images/xcode_protocol_result.png
+
+replace *code* with the following string:
+
+.. code-block:: swift
+
+   print(string)
+
+and you should end up with the this result
+
+.. literalinclude:: ../../../examples/hallo_world/hallo_world-2.swift
+   :language: swift
+
+Here comes the most important of all, because just creating a swift class with the same name won't do much magic.
+
+You might also wonder what is this `HalloWorld_Delegate`, other than it mimics the same function layout as you wrote in the hallo_world.py.
+
+Protocols are used to create links between different classes, or in our case to connect the generated code in "hallo_world.swift" ( look in SwiftWrappers group ).
+
+So for each wrapper file, KivySwiftLink will create a protocol with the same name layout <WrapperClassName>_Delegate.
+In this case, it will be HalloWorld_Delegate.
+
+So how do we set the protocol/delegate target then?
+Well, simple, KSL also generates a function for that need and will have the following name layout:
+	Init<WrapperClassName>_Delegate
+and accepts the following arguement 
+	(delegate: <WrapperClassName>_Delegate )
+
+so in HalloWorld's case:
+	InitHalloWorld_Delegate(delegate: HalloWorld_Delegate)
+
+let use ``InitHalloWorld_Delegate`` 
+
+.. literalinclude:: ../../../examples/hallo_world/hallo_world-3.swift
+   :language: swift
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+est laborum.
+
+
 
 PythonMain.swift
 ^^^^^^^^^^^^^^^^
@@ -55,12 +131,22 @@ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
 est laborum.
 
 Api:
-******
+****
 .. autoclass:: hallo_world.HalloWorld
     :members:
 
 
 
 
+Part 2
+======
         
         
+Api:
+****
+.. autoclass:: hallo_world.HalloWorld
+    :members:
+    :noindex:
+
+.. autoclass:: hallo_world.HalloWorld.Callbacks
+   :members:

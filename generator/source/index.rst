@@ -10,6 +10,7 @@ Welcome to ``KivySwiftLink``'s documentation!
    :maxdepth: 1
    :caption: Content
 
+   getting_started
    documentation
    learn_swift
    examples

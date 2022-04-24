@@ -8,7 +8,7 @@ class PythonMain {
     
     static let shared = PythonMain()
     
-    let hallo_world = HalloWorld()
+    let hallo_world = HelloWorld()
     
     private init() {
         

@@ -1,12 +1,14 @@
+//HelloWorld.swift
 import Foundation
 
-class HalloWorld {
+class HelloWorld {
+    
     init() {
-        InitHalloWorld_Delegate(delegate: self)
+
     }
 }
 
-extension HalloWorld: HalloWorld_Delegate {
+extension HelloWorld: HelloWorld_Delegate {
 
     func send_string(string: String) {
         print(string)
