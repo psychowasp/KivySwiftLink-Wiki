@@ -12,7 +12,7 @@ class Box(BoxLayout):
 Builder.load_string("""
 <Box>:
     Button:
-        on_press: app.hello_world.send_string("Hallo from python")
+        on_press: app.hello_world.send_string("Hello from python")
 """)
 
 

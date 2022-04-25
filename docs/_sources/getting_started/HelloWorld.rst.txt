@@ -7,7 +7,7 @@ Part 1
 
 In this example a project with the name ``my_project`` was used 
 and target python folder was created in the root of the working folder
-with the name ``hallo_src``
+with the name ``hello_src``
 
 with the 3 following commands
 (1: create new python_src folder, 2: creating new project and finally 3: selecting it as current target project)
@@ -139,7 +139,7 @@ Add the following line to PythonMain class
 
 
 
-Hallo World Api
+Hello World Api
 ^^^^^^^^^^^^^^^
 
 .. autoclass:: hello_world.HelloWorld
