@@ -14,8 +14,8 @@ with the 3 following commands
 
 .. code-block:: sh
 
-   mkdir hallo_src
-   ksl project create my_project hallo_src
+   mkdir hello_src
+   ksl project create my_project hello_src
    ksl project select my_project
 
 in ``Finder`` goto 
@@ -139,11 +139,22 @@ Add the following line to PythonMain class
 
 
 
-Api:
-****
+Hallo World Api
+^^^^^^^^^^^^^^^
+
 .. autoclass:: hello_world.HelloWorld
     :members:
 
+
+Kivy code(main.py)
+^^^^^^^^^^^^^^^^^^
+
+main.py
+"""""""
+
+.. literalinclude:: ../../../examples/hello_world/main.py
+   :language: python
+   :emphasize-lines: 11
 
 
 

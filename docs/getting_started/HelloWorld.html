@@ -49,6 +49,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#part-1">Part 1</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#swift">Swift:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pythonmain-swift">PythonMain.swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hallo-world-api">Hallo World Api</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kivy-code-main-py">Kivy code(main.py)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#part-2">Part 2</a></li>
@@ -96,8 +98,8 @@ and target python folder was created in the root of the working folder
 with the name <code class="docutils literal notranslate"><span class="pre">hallo_src</span></code></p>
 <p>with the 3 following commands
 (1: create new python_src folder, 2: creating new project and finally 3: selecting it as current target project)</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir hallo_src
-ksl project create my_project hallo_src
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir hello_src
+ksl project create my_project hello_src
 ksl project <span class="k">select</span> my_project
 </pre></div>
 </div>
@@ -245,6 +247,9 @@ Once this class is done initing all the classes that have been added to it, then
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="hallo-world-api">
+<h3>Hallo World Api<a class="headerlink" href="#hallo-world-api" title="Permalink to this headline"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="hello_world.HelloWorld">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hello_world.</span></span><span class="sig-name descname"><span class="pre">HelloWorld</span></span><a class="reference internal" href="../_modules/hello_world.html#HelloWorld"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hello_world.HelloWorld" title="Permalink to this definition"></a></dt>
@@ -256,6 +261,46 @@ Once this class is done initing all the classes that have been added to it, then
 
 </dd></dl>
 
+</div>
+<div class="section" id="kivy-code-main-py">
+<h3>Kivy code(main.py)<a class="headerlink" href="#kivy-code-main-py" title="Permalink to this headline"></a></h3>
+<div class="section" id="main-py">
+<h4>main.py<a class="headerlink" href="#main-py" title="Permalink to this headline"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.lang.builder</span> <span class="kn">import</span> <span class="n">Builder</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.boxlayout</span> <span class="kn">import</span> <span class="n">BoxLayout</span>
+
+<span class="kn">from</span> <span class="nn">hello_world</span> <span class="kn">import</span> <span class="n">HelloWorld</span>
+
+<span class="k">class</span> <span class="nc">Box</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="hll">
+</span><span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;Box&gt;:</span>
+<span class="s2">    Button:</span>
+<span class="s2">        on_press: app.hello_world.send_string(&quot;Hallo from python&quot;)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+
+
+<span class="k">class</span> <span class="nc">HelloWorldApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HelloWorldApp</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hello_world</span> <span class="o">=</span> <span class="n">HelloWorld</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    
+    
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Box</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">HelloWorldApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="part-2">
